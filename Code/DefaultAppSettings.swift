@@ -46,7 +46,7 @@ Uses `NSUserDefaults` under the hood.
     public func settingNames()
         -> [String]
     {
-        return userDefaults.dictionaryRepresentation().keys.array.map({$0.description})
+        return userDefaults.dictionaryRepresentation().keys.array
     }
 
     /**
