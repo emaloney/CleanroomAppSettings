@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3B92C69F1B27BF8D00555D7C /* CleanroomAppSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B92C6931B27BF8D00555D7C /* CleanroomAppSettings.framework */; };
-		3BEF2A2A1B27C478009D2A29 /* AppSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEF2A241B27C478009D2A29 /* AppSettingsProvider.swift */; };
+		3BD636191B39D6110001C5F8 /* NSUserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD636181B39D6110001C5F8 /* NSUserDefaultsExtensions.swift */; };
+		3BD6361B1B39D6300001C5F8 /* NSDictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD6361A1B39D6300001C5F8 /* NSDictionaryExtensions.swift */; };
 		3BEF2A2B1B27C478009D2A29 /* AppSettingsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEF2A251B27C478009D2A29 /* AppSettingsReader.swift */; };
-		3BEF2A2C1B27C478009D2A29 /* AppSettingsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEF2A261B27C478009D2A29 /* AppSettingsStorage.swift */; };
 		3BEF2A2D1B27C478009D2A29 /* AppSettingsWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEF2A271B27C478009D2A29 /* AppSettingsWriter.swift */; };
-		3BEF2A2E1B27C478009D2A29 /* DefaultAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEF2A281B27C478009D2A29 /* DefaultAppSettings.swift */; };
-		3BEF2A2F1B27C478009D2A29 /* DictionaryAppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEF2A291B27C478009D2A29 /* DictionaryAppSettings.swift */; };
 		3BEF2A321B27C484009D2A29 /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEF2A311B27C484009D2A29 /* AppSettingsTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,12 +35,10 @@
 		3B0693151B3287DB0040CDF3 /* Info-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Tests.plist"; sourceTree = "<group>"; };
 		3B92C6931B27BF8D00555D7C /* CleanroomAppSettings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanroomAppSettings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B92C69E1B27BF8D00555D7C /* CleanroomAppSettingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanroomAppSettingsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BEF2A241B27C478009D2A29 /* AppSettingsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsProvider.swift; sourceTree = "<group>"; };
+		3BD636181B39D6110001C5F8 /* NSUserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsExtensions.swift; sourceTree = "<group>"; };
+		3BD6361A1B39D6300001C5F8 /* NSDictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDictionaryExtensions.swift; sourceTree = "<group>"; };
 		3BEF2A251B27C478009D2A29 /* AppSettingsReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsReader.swift; sourceTree = "<group>"; };
-		3BEF2A261B27C478009D2A29 /* AppSettingsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsStorage.swift; sourceTree = "<group>"; };
 		3BEF2A271B27C478009D2A29 /* AppSettingsWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsWriter.swift; sourceTree = "<group>"; };
-		3BEF2A281B27C478009D2A29 /* DefaultAppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultAppSettings.swift; sourceTree = "<group>"; };
-		3BEF2A291B27C478009D2A29 /* DictionaryAppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryAppSettings.swift; sourceTree = "<group>"; };
 		3BEF2A311B27C484009D2A29 /* AppSettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,12 +105,10 @@
 		3BEF2A231B27C478009D2A29 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				3BEF2A241B27C478009D2A29 /* AppSettingsProvider.swift */,
 				3BEF2A251B27C478009D2A29 /* AppSettingsReader.swift */,
-				3BEF2A261B27C478009D2A29 /* AppSettingsStorage.swift */,
 				3BEF2A271B27C478009D2A29 /* AppSettingsWriter.swift */,
-				3BEF2A281B27C478009D2A29 /* DefaultAppSettings.swift */,
-				3BEF2A291B27C478009D2A29 /* DictionaryAppSettings.swift */,
+				3BD636181B39D6110001C5F8 /* NSUserDefaultsExtensions.swift */,
+				3BD6361A1B39D6300001C5F8 /* NSDictionaryExtensions.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -234,12 +228,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD636191B39D6110001C5F8 /* NSUserDefaultsExtensions.swift in Sources */,
+				3BD6361B1B39D6300001C5F8 /* NSDictionaryExtensions.swift in Sources */,
 				3BEF2A2D1B27C478009D2A29 /* AppSettingsWriter.swift in Sources */,
-				3BEF2A2F1B27C478009D2A29 /* DictionaryAppSettings.swift in Sources */,
-				3BEF2A2E1B27C478009D2A29 /* DefaultAppSettings.swift in Sources */,
 				3BEF2A2B1B27C478009D2A29 /* AppSettingsReader.swift in Sources */,
-				3BEF2A2C1B27C478009D2A29 /* AppSettingsStorage.swift in Sources */,
-				3BEF2A2A1B27C478009D2A29 /* AppSettingsProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

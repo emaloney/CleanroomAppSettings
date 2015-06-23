@@ -9,71 +9,283 @@
 import Foundation
 
 /**
-Provides functions for reading values from an `AppSettingsProvider`
-instance in a type-safe way.
+Entities conforming to this protocol are capable of providing values for
+*application settings*.
+
+Application settings are global values available to the application at runtime.
+Settings values should persist across application launches, and should be
+available locally on the device running the application.
+
+Storage for application settings is typically provided by the operating system
+and may be transparently synchronized across multiple devices depending on the
+underlying implementation.
+
+This framework also extends `NSUserDefaults`, allowing it to be used as an
+`AppSettingsReader`.
 */
-public class AppSettingsReader: AppSettingsProvider
+public protocol AppSettingsReader
 {
-    private let provider: AppSettingsProvider
-
-    /**
-    Initializes a new instance to read settings values from the
-    specified `AppSettingsProvider`.
-
-    :param:     provider The settings provider
-    */
-    public init(provider: AppSettingsProvider)
-    {
-        self.provider = provider
-    }
-
     /**
     Returns the names of the application settings for which values currently
     exist.
 
-    :returns:   The application settings names
+    :returns:   The application settings names.
     */
-    public func settingNames()
-        -> [String]
-    {
-        return provider.settingNames()
-    }
+    var settingNames: [String] { get }
 
     /**
     Returns the value of the setting with the specified name.
 
     :param:     name The setting name
 
-    :returns:   The value of the setting, or `nil` if none exists.
+    :returns:   The value of the setting, or `nil` if no such setting exists.
     */
-    public func valueOfSetting(name: String)
-        -> NSObject?
-    {
-        return provider.valueOfSetting(name)
-    }
+    func valueOfSetting(name: String)
+        -> AnyObject?
 
     /**
     Returns the value of the setting with the specified name.
 
     :param:     name The setting name
-    
+
     :param:     defaultValue A default value to use in case there is no existing
                 value for the given setting.
 
-    :returns:   The value of the setting, or `defaultValue` if there is 
+    :returns:   The value of the setting, or `defaultValue` if there is
                 currently no value for the specified setting.
     */
-    public func valueOfSetting(name: String, withDefault defaultValue: NSObject)
-        -> NSObject
+    func valueOfSetting(name: String, withDefault defaultValue: AnyObject)
+        -> AnyObject
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as a
+    boolean value.
+
+    :param:     name The setting name
+
+    :returns:   The value of the setting. Will be `nil` if there is no value for
+                the setting, or if the value couldn't be interpreted as a
+                `Bool`.
+    */
+    func boolValueOfSetting(name: String)
+        -> Bool?
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as a
+    boolean value.
+
+    :param:     name The setting name
+
+    :param:     defaultValue A default value to use in case there is no existing
+                value of the correct type for the given setting.
+
+    :returns:   The value of the setting, or `defaultValue` if there is
+                currently no value for the specified setting that can be
+                interpreted as a `Bool`.
+    */
+    func boolValueOfSetting(name: String, withDefault defaultValue: Bool)
+        -> Bool
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as a
+    numeric value.
+
+    :param:     name The setting name
+
+    :returns:   The value of the setting. Will be `nil` if there is no value for
+                the setting, or if the value couldn't be interpreted as an
+                `NSNumber`.
+    */
+    func numericValueOfSetting(name: String)
+        -> NSNumber?
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as a
+    numeric value.
+
+    :param: name The setting name
+
+    :param:     defaultValue A default value to use in case there is no existing
+                value of the correct type for the given setting.
+
+    :returns:   The value of the setting, or `defaultValue` if there is
+                currently no value for the specified setting that can be
+                interpreted as an `NSNumber`.
+    */
+    func numericValueOfSetting(name: String, withDefault defaultValue: NSNumber)
+        -> NSNumber
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as an
+    integer value.
+
+    :param:     name The setting name
+
+    :returns:   The value of the setting. Will be `nil` if there is no value for
+                the setting, or if the value couldn't be interpreted as an
+                `Int`.
+    */
+    func intValueOfSetting(name: String)
+        -> Int?
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as an
+    integer value.
+
+    :param:     name The setting name
+
+    :param:     defaultValue A default value to use in case there is no existing
+                value of the correct type for the given setting.
+
+    :returns:   The value of the setting, or `defaultValue` if there is
+                currently no value for the specified setting that can be
+                interpreted as an `Int`.
+    */
+    func intValueOfSetting(name: String, withDefault defaultValue: Int)
+        -> Int
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as a
+    floating-point value.
+
+    :param:     name The setting name
+
+    :returns:   The value of the setting. Will be `nil` if there is no value for
+                the setting, or if the value couldn't be interpreted as a
+                `Double`.
+    */
+    func doubleValueOfSetting(name: String)
+        -> Double?
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as a
+    floating-point value.
+
+    :param:     name The setting name
+
+    :param:     defaultValue A default value to use in case there is no existing
+                value of the correct type for the given setting.
+
+    :returns:   The value of the setting, or `defaultValue` if there is
+                currently no value for the specified setting that can be
+                interpreted as a `Double`.
+    */
+    func doubleValueOfSetting(name: String, withDefault defaultValue: Double)
+        -> Double
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as a
+    string value.
+
+    :param:     name The setting name
+
+    :returns:   The value of the setting. Will be `nil` if there is no value for
+                the setting, or if the value couldn't be interpreted as a
+                `String`.
+    */
+    func stringValueOfSetting(name: String)
+        -> String?
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as a
+    string value.
+
+    :param:     name The setting name
+
+    :param:     defaultValue A default value to use in case there is no existing
+                value of the correct type for the given setting.
+
+    :returns:   The value of the setting, or `defaultValue` if there is
+                currently no value for the specified setting that can be
+                interpreted as a `String`.
+    */
+    func stringValueOfSetting(name: String, withDefault defaultValue: String)
+        -> String
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as an
+    array.
+
+    :param:     name The setting name
+
+    :returns:   The value of the setting. Will be `nil` if there is no value for
+                the setting, or if the value couldn't be interpreted as an
+                `NSArray`.
+    */
+    func arrayValueOfSetting(name: String)
+        -> NSArray?
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as an
+    array.
+
+    :param:     name The setting name
+
+    :param:     defaultValue A default value to use in case there is no existing
+                value of the correct type for the given setting.
+
+    :returns:   The value of the setting, or `defaultValue` if there is
+                currently no value for the specified setting that can be
+                interpreted as an `NSArray`.
+    */
+    func arrayValueOfSetting(name: String, withDefault defaultValue: NSArray)
+        -> NSArray
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as a
+    dictionary.
+
+    :param:     name The setting name
+
+    :returns:   The value of the setting. Will be `nil` if there is no value for
+                the setting, or if the value couldn't be interpreted as an
+                `NSDictionary`.
+    */
+    func dictionaryValueOfSetting(name: String)
+        -> NSDictionary?
+
+    /**
+    Returns the value of the setting with the specified name, interpreted as
+    a dictionary.
+
+    :param:     name The setting name
+
+    :param:     defaultValue A default value to use in case there is no existing
+                value of the correct type for the given setting.
+
+    :returns:   The value of the setting, or `defaultValue` if there is
+                currently no value for the specified setting that can be
+                interpreted as an `NSDictionary`.
+    */
+    func dictionaryValueOfSetting(name: String, withDefault defaultValue: NSDictionary)
+        -> NSDictionary
+}
+
+extension AppSettingsReader
+{
+    /**
+    Returns the value of the setting with the specified name.
+
+    :param:     name The setting name
+
+    :param:     defaultValue A default value to use in case there is no existing
+                value for the given setting.
+
+    :returns:   The value of the setting, or `defaultValue` if there is
+                currently no value for the specified setting.
+    */
+    public func valueOfSetting(name: String, withDefault defaultValue: AnyObject)
+        -> AnyObject
     {
-        if let obj = valueOfSetting(name) {
-            return obj
+        guard let obj = valueOfSetting(name) else {
+            return defaultValue
         }
-        return defaultValue
+
+        return obj
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as a 
+    Returns the value of the setting with the specified name, interpreted as a
     boolean value.
 
     :param:     name The setting name
@@ -85,14 +297,15 @@ public class AppSettingsReader: AppSettingsProvider
     public func boolValueOfSetting(name: String)
         -> Bool?
     {
-        if let int = intValueOfSetting(name) {
-            return int != 0
+        guard let int = intValueOfSetting(name) else {
+            return nil
         }
-        return nil
+
+        return int != 0
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as a 
+    Returns the value of the setting with the specified name, interpreted as a
     boolean value.
 
     :param:     name The setting name
@@ -100,21 +313,22 @@ public class AppSettingsReader: AppSettingsProvider
     :param:     defaultValue A default value to use in case there is no existing
                 value of the correct type for the given setting.
 
-    :returns:   The value of the setting, or `defaultValue` if there is 
+    :returns:   The value of the setting, or `defaultValue` if there is
                 currently no value for the specified setting that can be
                 interpreted as a `Bool`.
     */
     public func boolValueOfSetting(name: String, withDefault defaultValue: Bool)
         -> Bool
     {
-        if let val = boolValueOfSetting(name) {
-            return val
+        guard let val = boolValueOfSetting(name) else {
+            return defaultValue
         }
-        return defaultValue
+
+        return val
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as a 
+    Returns the value of the setting with the specified name, interpreted as a
     numeric value.
 
     :param:     name The setting name
@@ -126,42 +340,47 @@ public class AppSettingsReader: AppSettingsProvider
     public func numericValueOfSetting(name: String)
         -> NSNumber?
     {
-        if let val = valueOfSetting(name) as? NSNumber {
-            return val
+        guard let val = valueOfSetting(name) else {
+            return nil
         }
-        else if let val = valueOfSetting(name) as? NSString {
-            return NSDecimalNumber(string: val as String)
+
+        if let num = val as? NSNumber {
+            return num
+        }
+        else if let str = val as? String {
+            return NSDecimalNumber(string: str)
         }
         return nil
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as a 
+    Returns the value of the setting with the specified name, interpreted as a
     numeric value.
 
-    :param: name The setting name
+    :param:     name The setting name
 
     :param:     defaultValue A default value to use in case there is no existing
                 value of the correct type for the given setting.
 
-    :returns:   The value of the setting, or `defaultValue` if there is 
+    :returns:   The value of the setting, or `defaultValue` if there is
                 currently no value for the specified setting that can be
                 interpreted as an `NSNumber`.
     */
     public func numericValueOfSetting(name: String, withDefault defaultValue: NSNumber)
         -> NSNumber
     {
-        if let val = numericValueOfSetting(name) {
-            return val
+        guard let val = numericValueOfSetting(name) else {
+            return defaultValue
         }
-        return defaultValue
+
+        return val
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as an 
+    Returns the value of the setting with the specified name, interpreted as an
     integer value.
 
-    :param: name The setting name
+    :param:     name The setting name
 
     :returns:   The value of the setting. Will be `nil` if there is no value for
                 the setting, or if the value couldn't be interpreted as an
@@ -170,36 +389,38 @@ public class AppSettingsReader: AppSettingsProvider
     public func intValueOfSetting(name: String)
         -> Int?
     {
-        if let val = numericValueOfSetting(name) {
-            return val.integerValue
+        guard let val = numericValueOfSetting(name) else {
+            return nil
         }
-        return nil
+
+        return val.integerValue
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as an 
+    Returns the value of the setting with the specified name, interpreted as an
     integer value.
 
-    :param: name The setting name
+    :param:     name The setting name
 
     :param:     defaultValue A default value to use in case there is no existing
                 value of the correct type for the given setting.
 
-    :returns:   The value of the setting, or `defaultValue` if there is 
+    :returns:   The value of the setting, or `defaultValue` if there is
                 currently no value for the specified setting that can be
                 interpreted as an `Int`.
     */
     public func intValueOfSetting(name: String, withDefault defaultValue: Int)
         -> Int
     {
-        if let val = intValueOfSetting(name) {
-            return val
+        guard let val = intValueOfSetting(name) else {
+            return defaultValue
         }
-        return defaultValue
+
+        return val
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as a 
+    Returns the value of the setting with the specified name, interpreted as a
     floating-point value.
 
     :param:     name The setting name
@@ -211,14 +432,15 @@ public class AppSettingsReader: AppSettingsProvider
     public func doubleValueOfSetting(name: String)
         -> Double?
     {
-        if let val = numericValueOfSetting(name) {
-            return val.doubleValue
+        guard let val = numericValueOfSetting(name) else {
+            return nil
         }
-        return nil
+
+        return val.doubleValue
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as a 
+    Returns the value of the setting with the specified name, interpreted as a
     floating-point value.
 
     :param:     name The setting name
@@ -226,21 +448,22 @@ public class AppSettingsReader: AppSettingsProvider
     :param:     defaultValue A default value to use in case there is no existing
                 value of the correct type for the given setting.
 
-    :returns:   The value of the setting, or `defaultValue` if there is 
+    :returns:   The value of the setting, or `defaultValue` if there is
                 currently no value for the specified setting that can be
                 interpreted as a `Double`.
     */
     public func doubleValueOfSetting(name: String, withDefault defaultValue: Double)
         -> Double
     {
-        if let val = doubleValueOfSetting(name) {
-            return val
+        guard let val = doubleValueOfSetting(name) else {
+            return defaultValue
         }
-        return defaultValue
+
+        return val
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as a 
+    Returns the value of the setting with the specified name, interpreted as a
     string value.
 
     :param:     name The setting name
@@ -252,39 +475,44 @@ public class AppSettingsReader: AppSettingsProvider
     public func stringValueOfSetting(name: String)
         -> String?
     {
-        if let val = valueOfSetting(name) {
-            if let str = val as? String {
-                return str
-            }
-            return val.description
+        guard let val = valueOfSetting(name) else {
+            return nil
+        }
+
+        if let str = val as? String {
+            return str
+        }
+        else if let describe = val as? CustomStringConvertible {
+            return describe.description
         }
         return nil
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as a 
+    Returns the value of the setting with the specified name, interpreted as a
     string value.
 
-    :param: name The setting name
+    :param:     name The setting name
 
     :param:     defaultValue A default value to use in case there is no existing
                 value of the correct type for the given setting.
 
-    :returns:   The value of the setting, or `defaultValue` if there is 
+    :returns:   The value of the setting, or `defaultValue` if there is
                 currently no value for the specified setting that can be
                 interpreted as a `String`.
     */
     public func stringValueOfSetting(name: String, withDefault defaultValue: String)
         -> String
     {
-        if let val = stringValueOfSetting(name) {
-            return val
+        guard let val = stringValueOfSetting(name) else {
+            return defaultValue
         }
-        return defaultValue
+
+        return val
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as an 
+    Returns the value of the setting with the specified name, interpreted as an
     array.
 
     :param:     name The setting name
@@ -296,36 +524,38 @@ public class AppSettingsReader: AppSettingsProvider
     public func arrayValueOfSetting(name: String)
         -> NSArray?
     {
-        if let val = valueOfSetting(name) as? NSArray {
-            return val
+        guard let val = valueOfSetting(name) as? NSArray else {
+            return nil
         }
-        return nil
+
+        return val
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as an 
+    Returns the value of the setting with the specified name, interpreted as an
     array.
 
-    :param: name The setting name
+    :param:     name The setting name
 
     :param:     defaultValue A default value to use in case there is no existing
                 value of the correct type for the given setting.
 
-    :returns:   The value of the setting, or `defaultValue` if there is 
+    :returns:   The value of the setting, or `defaultValue` if there is
                 currently no value for the specified setting that can be
                 interpreted as an `NSArray`.
     */
     public func arrayValueOfSetting(name: String, withDefault defaultValue: NSArray)
         -> NSArray
     {
-        if let val = arrayValueOfSetting(name) {
-            return val
+        guard let val = arrayValueOfSetting(name) else {
+            return defaultValue
         }
-        return defaultValue
+
+        return val
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as a 
+    Returns the value of the setting with the specified name, interpreted as a
     dictionary.
 
     :param:     name The setting name
@@ -337,14 +567,15 @@ public class AppSettingsReader: AppSettingsProvider
     public func dictionaryValueOfSetting(name: String)
         -> NSDictionary?
     {
-        if let val = valueOfSetting(name) as? NSDictionary {
-            return val
+        guard let val = valueOfSetting(name) as? NSDictionary else {
+            return nil
         }
-        return nil
+
+        return val
     }
 
     /**
-    Returns the value of the setting with the specified name, interpreted as 
+    Returns the value of the setting with the specified name, interpreted as
     a dictionary.
 
     :param:     name The setting name
@@ -352,16 +583,18 @@ public class AppSettingsReader: AppSettingsProvider
     :param:     defaultValue A default value to use in case there is no existing
                 value of the correct type for the given setting.
 
-    :returns:   The value of the setting, or `defaultValue` if there is 
+    :returns:   The value of the setting, or `defaultValue` if there is
                 currently no value for the specified setting that can be
                 interpreted as an `NSDictionary`.
     */
     public func dictionaryValueOfSetting(name: String, withDefault defaultValue: NSDictionary)
         -> NSDictionary
     {
-        if let val = dictionaryValueOfSetting(name) {
-            return val
+        guard let val = dictionaryValueOfSetting(name) else {
+            return defaultValue
         }
-        return defaultValue
+
+        return val
     }
 }
+

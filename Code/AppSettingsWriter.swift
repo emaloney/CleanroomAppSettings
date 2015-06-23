@@ -9,46 +9,22 @@
 import Foundation
 
 /**
-Provides functions for reading and writing `AppSettingsStorage` values
-in a type-safe way.
+This protocol extends `AppSettingsReader` by adding the ability
+to store and remove values.
+
+This framework also extends `NSUserDefaults`, allowing it to be used as an
+`AppSettingsWriter`.
 */
-public class AppSettingsWriter: AppSettingsReader, AppSettingsStorage
+public protocol AppSettingsWriter: AppSettingsReader
 {
-    private let storage: AppSettingsStorage
-
     /**
-    Initializes a new instance to use the given `AppSettingsStorage`
-    for reading and writing settings values.
+    Changes the value of the given setting to the specified object.
 
-    :param: storage The settings storage
+    :param: value The new value for the setting
+
+    :param: settingName The name of the setting whose value is to be changed
     */
-    public init(storage: AppSettingsStorage)
-    {
-        self.storage = storage
-        super.init(provider: storage)
-    }
-
-    /**
-    Sets a new value for the specified setting.
-
-    :param: value The new value for `settingName`
-
-    :param: settingName The name of the setting that will receive `value`
-    */
-    public func setValue(value: NSObject, forSetting settingName: String)
-    {
-        storage.setValue(value, forSetting: settingName)
-    }
-
-    /**
-    Removes the existing value (if any) for the setting with the given name.
-
-    :param: name The name of the setting whose value will be removed
-    */
-    public func removeValueForSetting(name: String)
-    {
-        storage.removeValueForSetting(name)
-    }
+    mutating func setValue(value: AnyObject, forSetting settingName: String)
 
     /**
     Changes the value of the given setting to the specified boolean.
@@ -57,9 +33,73 @@ public class AppSettingsWriter: AppSettingsReader, AppSettingsStorage
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    public func setBool(value: Bool, forSetting settingName: String)
+    mutating func setBool(value: Bool, forSetting settingName: String)
+
+    /**
+    Changes the value of the given setting to the specified integer.
+
+    :param: value The new value for the setting
+
+    :param: settingName The name of the setting whose value is to be changed
+    */
+    mutating func setInt(value: Int, forSetting settingName: String)
+
+    /**
+    Changes the value of the given setting to the specified `Double`.
+
+    :param: value The new value for the setting
+
+    :param: settingName The name of the setting whose value is to be changed
+    */
+    mutating func setDouble(value: Double, forSetting settingName: String)
+
+    /**
+    Changes the value of the given setting to the specified string.
+
+    :param: value The new value for the setting
+
+    :param: settingName The name of the setting whose value is to be changed
+    */
+    mutating func setString(value: String, forSetting settingName: String)
+
+    /**
+    Changes the value of the given setting to the specified array.
+
+    :param: value The new value for the setting
+
+    :param: settingName The name of the setting whose value is to be changed
+    */
+    mutating func setArray(value: [AnyObject], forSetting settingName: String)
+
+    /**
+    Changes the value of the given setting to the specified dictionary.
+
+    :param: value The new value for the setting
+    
+    :param: settingName The name of the setting whose value is to be changed
+    */
+    mutating func setDictionary(value: [NSObject : AnyObject], forSetting settingName: String)
+
+    /**
+    Removes the existing value (if any) for the setting with the given name.
+
+    :param:     name The name of the setting whose value is to be removed.
+    */
+    mutating func removeSetting(name: String)
+}
+
+extension AppSettingsWriter
+{
+    /**
+    Changes the value of the given setting to the specified boolean.
+
+    :param: value The new value for the setting
+
+    :param: settingName The name of the setting whose value is to be changed
+    */
+    public mutating func setBool(value: Bool, forSetting settingName: String)
     {
-        setValue(value as NSNumber, forSetting: settingName)
+        setValue(NSNumber(bool: value), forSetting: settingName)
     }
 
     /**
@@ -69,9 +109,9 @@ public class AppSettingsWriter: AppSettingsReader, AppSettingsStorage
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    public func setInt(value: Int, forSetting settingName: String)
+    public mutating func setInt(value: Int, forSetting settingName: String)
     {
-        setValue(value as NSNumber, forSetting: settingName)
+        setValue(NSNumber(long: value), forSetting: settingName)
     }
 
     /**
@@ -81,9 +121,9 @@ public class AppSettingsWriter: AppSettingsReader, AppSettingsStorage
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    public func setDouble(value: Double, forSetting settingName: String)
+    public mutating func setDouble(value: Double, forSetting settingName: String)
     {
-        setValue(value as NSNumber, forSetting: settingName)
+        setValue(NSNumber(double: value), forSetting: settingName)
     }
 
     /**
@@ -93,7 +133,7 @@ public class AppSettingsWriter: AppSettingsReader, AppSettingsStorage
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    public func setString(value: String, forSetting settingName: String)
+    public mutating func setString(value: String, forSetting settingName: String)
     {
         setValue(value as NSString, forSetting: settingName)
     }
@@ -105,7 +145,7 @@ public class AppSettingsWriter: AppSettingsReader, AppSettingsStorage
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    public func setArray(value: NSArray, forSetting settingName: String)
+    public mutating func setArray(value: [AnyObject], forSetting settingName: String)
     {
         setValue(value as NSArray, forSetting: settingName)
     }
@@ -114,11 +154,12 @@ public class AppSettingsWriter: AppSettingsReader, AppSettingsStorage
     Changes the value of the given setting to the specified dictionary.
 
     :param: value The new value for the setting
-    
+
     :param: settingName The name of the setting whose value is to be changed
     */
-    public func setDictionary(value: NSDictionary, forSetting settingName: String)
+    public mutating func setDictionary(value: [NSObject : AnyObject], forSetting settingName: String)
     {
         setValue(value as NSDictionary, forSetting: settingName)
     }
 }
+
