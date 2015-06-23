@@ -35,29 +35,12 @@ class AppSettingsTests: XCTestCase
         writer.setValue("1", forSetting: "boolTrue")
     }
 
-    func verifyMutableDictionaryAppSettingsStorage(storage: MutableDictionaryAppSettingsStorage)
-    {
-        // verify that values written "for general testing" exist
-        XCTAssertNotNil(storage.dictionary.objectForKey("foobar"))
-        XCTAssertNotNil(storage.dictionary.objectForKey("trueValue"))
-        XCTAssertNotNil(storage.dictionary.objectForKey("falseValue"))
-        XCTAssertNotNil(storage.dictionary.objectForKey("zeroInt"))
-        XCTAssertNotNil(storage.dictionary.objectForKey("year"))
-        XCTAssertNotNil(storage.dictionary.objectForKey("acceleration"))
-        XCTAssertNotNil(storage.dictionary.objectForKey("zeroDouble"))
-        XCTAssertNotNil(storage.dictionary.objectForKey("this is my string"))
-        XCTAssertNotNil(storage.dictionary.objectForKey("emptyArray"))
-        XCTAssertNotNil(storage.dictionary.objectForKey("evenArray"))
-        XCTAssertNotNil(storage.dictionary.objectForKey("emptyDict"))
-        XCTAssertNotNil(storage.dictionary.objectForKey("threeOrdinals"))
-    }
-
     func testRemoveValue(writer: AppSettingsWriter, usingReader reader: AppSettingsReader)
     {
         // test removing a value
         writer.setBool(true, forSetting: "notRemoved")
         XCTAssertNotNil(reader.valueOfSetting("notRemoved"))
-        writer.removeValueForSetting("notRemoved")
+        writer.removeSetting("notRemoved")
         XCTAssertNil(reader.valueOfSetting("notRemoved"))
     }
 
@@ -65,9 +48,6 @@ class AppSettingsTests: XCTestCase
     {
         // test reading directly from the writer
         testRemoveValue(writer, usingReader: writer)
-
-        // test reading indirectly
-        testRemoveValue(writer, usingReader: AppSettingsReader(provider: writer))
     }
 
     func testReading(reader: AppSettingsReader)
@@ -87,7 +67,7 @@ class AppSettingsTests: XCTestCase
         XCTAssertNotNil(reader.dictionaryValueOfSetting("threeOrdinals"))
 
         // test values
-        XCTAssertEqual(reader.valueOfSetting("foobar")!, "foo:bar")
+        XCTAssertEqual(reader.valueOfSetting("foobar") as! String, "foo:bar")
         XCTAssertEqual(reader.boolValueOfSetting("trueValue")!, true)
         XCTAssertEqual(reader.boolValueOfSetting("falseValue")!, false)
         XCTAssertEqual(reader.intValueOfSetting("zeroInt")!, 0)
@@ -111,7 +91,7 @@ class AppSettingsTests: XCTestCase
 
         // test default values for nonexistent keys
         XCTAssertNotNil(reader.valueOfSetting("nonexistent", withDefault: "foo"))
-        XCTAssertEqual(reader.valueOfSetting("nonexistent", withDefault: "foo"), "foo")
+        XCTAssertEqual(reader.valueOfSetting("nonexistent", withDefault: "foo") as! String, "foo")
         XCTAssertNotNil(reader.boolValueOfSetting("nonexistent", withDefault: true))
         XCTAssertEqual(reader.boolValueOfSetting("nonexistent", withDefault: true), true)
         XCTAssertNotNil(reader.intValueOfSetting("nonexistent", withDefault: 42))
@@ -126,7 +106,7 @@ class AppSettingsTests: XCTestCase
         XCTAssertEqual(reader.dictionaryValueOfSetting("nonexistent", withDefault: [1: 2, "free": "four"]), [1: 2, "free": "four"])
 
         // test default values for existing keys
-        XCTAssertNotEqual(reader.valueOfSetting("foobar", withDefault: "boo:far"), "boo:far")
+        XCTAssertNotEqual(reader.valueOfSetting("foobar", withDefault: "boo:far") as! String, "boo:far")
         XCTAssertNotEqual(reader.boolValueOfSetting("trueValue", withDefault: false), false)
         XCTAssertNotEqual(reader.boolValueOfSetting("falseValue", withDefault: true), true)
         XCTAssertNotEqual(reader.intValueOfSetting("zeroInt", withDefault: 1), 1)
@@ -151,36 +131,30 @@ class AppSettingsTests: XCTestCase
     func testAppSettingsAPI()
     {
         // write some values
-        let storage = MutableDictionaryAppSettingsStorage()
-        let writer = AppSettingsWriter(storage: storage)
+        let writer = NSMutableDictionary()
         setupWriter(writer)
 
-        // make sure we can see what was written
-        verifyMutableDictionaryAppSettingsStorage(storage)
-
         // test reading back values
-        let reader = AppSettingsReader(provider: DictionaryAppSettingsProvider(dictionary: storage.mutableDictionary))
-        testReading(reader)
+        testReading(writer)
 
         // test removing a value
         testRemoveValue(writer)
 
         // test removing a value (alternate verification)
         writer.setBool(true, forSetting: "notRemoved2")
-        XCTAssertNotNil(storage.dictionary.objectForKey("notRemoved2"))
-        writer.removeValueForSetting("notRemoved2")
-        XCTAssertNil(storage.dictionary.objectForKey("notRemoved2"))
+        XCTAssertNotNil(writer.objectForKey("notRemoved2"))
+        writer.removeSetting("notRemoved2")
+        XCTAssertNil(writer.objectForKey("notRemoved2"))
     }
 
     func testNSUserDefaultsImplementation()
     {
         // write some values
-        let writer = DefaultAppSettings()
+        let writer = NSMutableDictionary()
         setupWriter(writer)
 
         // test reading back values
-        let reader = AppSettingsReader(provider: writer)
-        testReading(reader)
+        testReading(writer)
 
         // test removing a value
         testRemoveValue(writer)
