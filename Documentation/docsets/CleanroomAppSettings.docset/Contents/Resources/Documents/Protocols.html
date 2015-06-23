@@ -27,28 +27,22 @@
       <nav class="sidebar">
         <ul class="nav-groups">
           <li class="nav-group-name">
-          <a href="Classes.html">Classes</a>
+          <a href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/AppSettingsReader.html">AppSettingsReader</a>
+                <a href="Extensions/AppSettingsReader.html">AppSettingsReader</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/AppSettingsWriter.html">AppSettingsWriter</a>
+                <a href="Extensions/AppSettingsWriter.html">AppSettingsWriter</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/DefaultAppSettings.html">DefaultAppSettings</a>
+                <a href="Extensions/NSDictionary.html">NSDictionary</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/DefaultAppSettingsProvider.html">DefaultAppSettingsProvider</a>
+                <a href="Extensions/NSMutableDictionary.html">NSMutableDictionary</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/DefaultAppSettingsStorage.html">DefaultAppSettingsStorage</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/DictionaryAppSettingsProvider.html">DictionaryAppSettingsProvider</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/MutableDictionaryAppSettingsStorage.html">MutableDictionaryAppSettingsStorage</a>
+                <a href="Extensions/NSUserDefaults.html">NSUserDefaults</a>
               </li>
             </ul>
           </li>
@@ -56,10 +50,10 @@
           <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Protocols/AppSettingsProvider.html">AppSettingsProvider</a>
+                <a href="Protocols/AppSettingsReader.html">AppSettingsReader</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols/AppSettingsStorage.html">AppSettingsStorage</a>
+                <a href="Protocols/AppSettingsWriter.html">AppSettingsWriter</a>
               </li>
             </ul>
           </li>
@@ -78,9 +72,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:P20CleanroomAppSettings18AppSettingsStorage"></a>
-                    <a name="//apple_ref/swift/Protocol/AppSettingsStorage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:P20CleanroomAppSettings18AppSettingsStorage">AppSettingsStorage</a>
+                    <a name="/s:P20CleanroomAppSettings17AppSettingsWriter"></a>
+                    <a name="//apple_ref/swift/Protocol/AppSettingsWriter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P20CleanroomAppSettings17AppSettingsWriter">AppSettingsWriter</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -88,19 +82,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This protocol extends <code>AppSettingsProvider</code> by adding the ability
-to store and remove values. The <code>DefaultAppSettingsStorage</code> class
-provides the default implementation of this protocol. Consider using an
-instance of the class <code>AppSettingsWriter</code> for writing values to
-an <code>AppSettingsStorage</code> instance.</p>
+                        <p>This protocol extends <code>AppSettingsReader</code> by adding the ability
+to store and remove values.</p>
 
-                        <a href="Protocols/AppSettingsStorage.html" class="slightly-smaller">See more</a>
+<p>This framework also extends <code>NSUserDefaults</code>, allowing it to be used as an
+<code>AppSettingsWriter</code>.</p>
+
+                        <a href="Protocols/AppSettingsWriter.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="Swift">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AppSettingsStorage</span><span class="p">:</span> <span class="kt">AppSettingsProvider</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AppSettingsWriter</span><span class="p">:</span> <span class="kt">AppSettingsReader</span></code></pre>
 
                         </div>
                       </div>
@@ -114,9 +108,9 @@ an <code>AppSettingsStorage</code> instance.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:P20CleanroomAppSettings19AppSettingsProvider"></a>
-                    <a name="//apple_ref/swift/Protocol/AppSettingsProvider" class="dashAnchor"></a>
-                    <a class="token" href="#/s:P20CleanroomAppSettings19AppSettingsProvider">AppSettingsProvider</a>
+                    <a name="/s:P20CleanroomAppSettings17AppSettingsReader"></a>
+                    <a name="//apple_ref/swift/Protocol/AppSettingsReader" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P20CleanroomAppSettings17AppSettingsReader">AppSettingsReader</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -125,23 +119,26 @@ an <code>AppSettingsStorage</code> instance.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Entities conforming to this protocol are capable of providing values for
-<em>application settings</em>. Application settings are global values available to
-the application at runtime. Settings values should persist across application 
-launches, and should be available locally on the device running the application.
-Storage for application settings is typically provided by the operating system
-and may be transparently synchronized across multiple devices depending on the
-underlying implementation. The <code>DefaultAppSettingsProvider</code> class 
-provides the default implementation of this protocol. Consider using an instance
-of the class <code>AppSettingsReader</code> for reading values from an
-<code>AppSettingsProvider</code> instance.</p>
+<em>application settings</em>.</p>
 
-                        <a href="Protocols/AppSettingsProvider.html" class="slightly-smaller">See more</a>
+<p>Application settings are global values available to the application at runtime.
+Settings values should persist across application launches, and should be
+available locally on the device running the application.</p>
+
+<p>Storage for application settings is typically provided by the operating system
+and may be transparently synchronized across multiple devices depending on the
+underlying implementation.</p>
+
+<p>This framework also extends <code>NSUserDefaults</code>, allowing it to be used as an
+<code>AppSettingsReader</code>.</p>
+
+                        <a href="Protocols/AppSettingsReader.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="Swift">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AppSettingsProvider</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AppSettingsReader</span></code></pre>
 
                         </div>
                       </div>
@@ -153,7 +150,7 @@ of the class <code>AppSettingsReader</code> for reading values from an
           </section>
         </section>
         <section id="footer">
-          <p>© 2014-2015 <a class="link" href="http://tech.gilt.com/" target="_blank" rel="external">Gilt Groupe</a>. All rights reserved. (Last updated: 2015-06-19)</p>
+          <p>© 2014-2015 <a class="link" href="http://tech.gilt.com/" target="_blank" rel="external">Gilt Groupe</a>. All rights reserved. (Last updated: 2015-06-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.2.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

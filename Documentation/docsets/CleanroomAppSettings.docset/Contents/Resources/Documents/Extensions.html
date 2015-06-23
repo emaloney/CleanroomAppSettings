@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Protocols  Reference</title>
+    <title>Extensions  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -9,7 +9,7 @@
     <script src="js/jazzy.js" defer></script>
   </head>
   <body>
-    <a title="Protocols  Reference"></a>
+    <a title="Extensions  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html">CleanroomAppSettings Docs</a> (100% documented)</p>
@@ -20,7 +20,7 @@
       <p id="breadcrumbs">
         <a href="index.html">CleanroomAppSettings Reference</a>
         <img id="carat" src="img/carat.png" />
-        Protocols  Reference
+        Extensions  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -62,8 +62,8 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Protocols</h1>
-            <p>The following protocols are available globally.</p>
+            <h1>Extensions</h1>
+            <p>The following extensions are available globally.</p>
 
           </section>
           <section class="section task-group-section">
@@ -72,8 +72,95 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:objc(cs)NSUserDefaults"></a>
+                    <a name="//apple_ref/swift/Extension/NSUserDefaults" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NSUserDefaults">NSUserDefaults</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Extensions/NSUserDefaults.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)NSDictionary"></a>
+                    <a name="//apple_ref/swift/Extension/NSDictionary" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NSDictionary">NSDictionary</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Extends the <code>NSDictionary</code> class to make it usable as an <code>AppSettingsReader</code>.</p>
+
+                        <a href="Extensions/NSDictionary.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="err">@interface</span> <span class="kt">NSDictionary</span>
+    <span class="p">:</span> <span class="kt">NSObject</span> <span class="o">&lt;</span><span class="kt">NSCopying</span><span class="p">,</span> <span class="kt">NSMutableCopying</span><span class="p">,</span> <span class="kt">NSSecureCoding</span><span class="p">,</span> <span class="kt">NSFastEnumeration</span><span class="o">&gt;</span>
+<span class="err">@end</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)NSMutableDictionary"></a>
+                    <a name="//apple_ref/swift/Extension/NSMutableDictionary" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NSMutableDictionary">NSMutableDictionary</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes the existing value (if any) for the setting with the given name.</p>
+
+                        <a href="Extensions/NSMutableDictionary.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="err">@interface</span> <span class="kt">NSMutableDictionary</span> <span class="p">:</span> <span class="kt">NSDictionary</span>
+<span class="err">@end</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:P20CleanroomAppSettings17AppSettingsWriter"></a>
-                    <a name="//apple_ref/swift/Protocol/AppSettingsWriter" class="dashAnchor"></a>
+                    <a name="//apple_ref/swift/Extension/AppSettingsWriter" class="dashAnchor"></a>
                     <a class="token" href="#/s:P20CleanroomAppSettings17AppSettingsWriter">AppSettingsWriter</a>
                     </code>
                   </div>
@@ -88,13 +175,13 @@ to store and remove values.</p>
 <p>This framework also extends <code>NSUserDefaults</code>, allowing it to be used as an
 <code>AppSettingsWriter</code>.</p>
 
-                        <a href="Protocols/AppSettingsWriter.html" class="slightly-smaller">See more</a>
+                        <a href="Extensions/AppSettingsWriter.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="Swift">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AppSettingsWriter</span><span class="p">:</span> <span class="kt">AppSettingsReader</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AppSettingsWriter</span> <span class="p">:</span> <span class="kt">AppSettingsReader</span></code></pre>
 
                         </div>
                       </div>
@@ -109,7 +196,7 @@ to store and remove values.</p>
                   <div>
                     <code>
                     <a name="/s:P20CleanroomAppSettings17AppSettingsReader"></a>
-                    <a name="//apple_ref/swift/Protocol/AppSettingsReader" class="dashAnchor"></a>
+                    <a name="//apple_ref/swift/Extension/AppSettingsReader" class="dashAnchor"></a>
                     <a class="token" href="#/s:P20CleanroomAppSettings17AppSettingsReader">AppSettingsReader</a>
                     </code>
                   </div>
@@ -132,7 +219,7 @@ underlying implementation.</p>
 <p>This framework also extends <code>NSUserDefaults</code>, allowing it to be used as an
 <code>AppSettingsReader</code>.</p>
 
-                        <a href="Protocols/AppSettingsReader.html" class="slightly-smaller">See more</a>
+                        <a href="Extensions/AppSettingsReader.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
