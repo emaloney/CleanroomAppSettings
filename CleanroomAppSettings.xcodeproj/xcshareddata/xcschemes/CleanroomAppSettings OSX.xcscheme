@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3B92C6921B27BF8D00555D7C"
-               BuildableName = "CleanroomAppSettings.framework"
-               BlueprintName = "CleanroomAppSettings"
-               ReferencedContainer = "container:CleanroomAppSettings.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3B92C69D1B27BF8D00555D7C"
-               BuildableName = "CleanroomAppSettingsTests.xctest"
-               BlueprintName = "CleanroomAppSettingsTests"
+               BlueprintIdentifier = "3B0167B61B44616700E330CA"
+               BuildableName = "CleanroomAppSettings OSX.framework"
+               BlueprintName = "CleanroomAppSettings OSX"
                ReferencedContainer = "container:CleanroomAppSettings.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -56,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3B92C6921B27BF8D00555D7C"
-            BuildableName = "CleanroomAppSettings.framework"
-            BlueprintName = "CleanroomAppSettings"
+            BlueprintIdentifier = "3B0167B61B44616700E330CA"
+            BuildableName = "CleanroomAppSettings OSX.framework"
+            BlueprintName = "CleanroomAppSettings OSX"
             ReferencedContainer = "container:CleanroomAppSettings.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -78,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3B92C6921B27BF8D00555D7C"
-            BuildableName = "CleanroomAppSettings.framework"
-            BlueprintName = "CleanroomAppSettings"
+            BlueprintIdentifier = "3B0167B61B44616700E330CA"
+            BuildableName = "CleanroomAppSettings OSX.framework"
+            BlueprintName = "CleanroomAppSettings OSX"
             ReferencedContainer = "container:CleanroomAppSettings.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -96,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3B92C6921B27BF8D00555D7C"
-            BuildableName = "CleanroomAppSettings.framework"
-            BlueprintName = "CleanroomAppSettings"
+            BlueprintIdentifier = "3B0167B61B44616700E330CA"
+            BuildableName = "CleanroomAppSettings OSX.framework"
+            BlueprintName = "CleanroomAppSettings OSX"
             ReferencedContainer = "container:CleanroomAppSettings.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
