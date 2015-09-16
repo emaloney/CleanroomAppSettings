@@ -20,7 +20,7 @@ extension NSUserDefaults: AppSettingsReader
     :returns:   The application settings names.
     */
     public var settingNames: [String] {
-        return dictionaryRepresentation().keys.array
+        return Array(dictionaryRepresentation().keys)
     }
 
     /**
