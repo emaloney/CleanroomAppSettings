@@ -11,7 +11,7 @@ CleanroomAppSettings is built as a *Swift framework*, and as such, it has the fo
 Platform|Minimum OS version
 --------|------------------------
 Apple TV|tvOS 9.0
-
+Apple Watch|watchOS 2.0
 iPhone/iPad|iOS 8.0
 Mac|OS X 10.10
 
@@ -114,7 +114,7 @@ To speed up the build process—and to avoid trying to build for a platform that
 To build for|Run the command
 --------|------------------------
 Apple TV|`carthage update --platform tvos`
-
+Apple Watch|`carthage update --platform watchos`
 iPhone/iPad|`carthage update --platform ios`
 Mac|`carthage update --platform mac`
 
@@ -241,7 +241,7 @@ Before we can add `CleanroomAppSettings.framework` to your app, we have to build
 
 **Important:** The next step will only work when the framework is built for a **device-based run destination**. That means that you must either select the “My Mac” or “iOS Device” run destination before building, or you must select an actual external device (an option that’s only available when such a device is connected to your development machine).
 
-Once a device-based run destination has been selected, select the appropriate build scheme for the target platform: “CleanroomAppSettings-iOS”, “CleanroomAppSettings-OSX” or “CleanroomAppSettings-tvOS”.
+Once a device-based run destination has been selected, select the appropriate build scheme for the target platform: “CleanroomAppSettings-iOS”, “CleanroomAppSettings-OSX”, “CleanroomAppSettings-tvOS” or “CleanroomAppSettings-watchOS”.
 
 Then, select *Build* (⌘B) from the *Product* menu.
 
