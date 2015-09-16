@@ -13,13 +13,13 @@
     <a title="AppSettingsWriter Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">CleanroomAppSettings Docs</a> (100% documented)</p>
+        <p><a href="../index.html">CleanroomAppSettings.git Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/emaloney/CleanroomAppSettings.git"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
-        <a href="../index.html">CleanroomAppSettings Reference</a>
+        <a href="../index.html">CleanroomAppSettings.git Reference</a>
         <img id="carat" src="../img/carat.png" />
         AppSettingsWriter Protocol Reference
       </p>
@@ -64,6 +64,12 @@
         <section>
           <section class="section">
             <h1>AppSettingsWriter</h1>
+              <div class="declaration">
+                <div class="Swift">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AppSettingsWriter</span><span class="p">:</span> <span class="kt">AppSettingsReader</span></code></pre>
+
+                </div>
+              </div>
             <p>This protocol extends <code>AppSettingsReader</code> by adding the ability
 to store and remove values.</p>
 
@@ -77,9 +83,9 @@ to store and remove values.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter8setValueUS0___FQPS0_FTPSs9AnyObject_10forSettingSS_T_"></a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter8setValueuRq_S0__Fq_FTPSs9AnyObject_10forSettingSS_T_"></a>
                     <a name="//apple_ref/swift/Method/setValue(_:forSetting:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter8setValueUS0___FQPS0_FTPSs9AnyObject_10forSettingSS_T_">setValue(_:forSetting:)</a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter8setValueuRq_S0__Fq_FTPSs9AnyObject_10forSettingSS_T_">setValue(_:forSetting:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -88,6 +94,10 @@ to store and remove values.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Changes the value of the given setting to the specified object.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
 
                       </div>
                       <div class="declaration">
@@ -98,48 +108,15 @@ to store and remove values.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>value</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The new value for the setting</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>settingName</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name of the setting whose value is to be changed</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter7setBoolUS0___FQPS0_FTSb10forSettingSS_T_"></a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter7setBooluRq_S0__Fq_FTSb10forSettingSS_T_"></a>
                     <a name="//apple_ref/swift/Method/setBool(_:forSetting:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter7setBoolUS0___FQPS0_FTSb10forSettingSS_T_">setBool(_:forSetting:)</a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter7setBooluRq_S0__Fq_FTSb10forSettingSS_T_">setBool(_:forSetting:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -148,6 +125,10 @@ to store and remove values.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Changes the value of the given setting to the specified boolean.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
 
                       </div>
                       <div class="declaration">
@@ -158,48 +139,15 @@ to store and remove values.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>value</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The new value for the setting</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>settingName</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name of the setting whose value is to be changed</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter6setIntUS0___FQPS0_FTSi10forSettingSS_T_"></a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter6setIntuRq_S0__Fq_FTSi10forSettingSS_T_"></a>
                     <a name="//apple_ref/swift/Method/setInt(_:forSetting:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter6setIntUS0___FQPS0_FTSi10forSettingSS_T_">setInt(_:forSetting:)</a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter6setIntuRq_S0__Fq_FTSi10forSettingSS_T_">setInt(_:forSetting:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -208,6 +156,10 @@ to store and remove values.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Changes the value of the given setting to the specified integer.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
 
                       </div>
                       <div class="declaration">
@@ -218,48 +170,15 @@ to store and remove values.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>value</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The new value for the setting</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>settingName</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name of the setting whose value is to be changed</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter9setDoubleUS0___FQPS0_FTSd10forSettingSS_T_"></a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter9setDoubleuRq_S0__Fq_FTSd10forSettingSS_T_"></a>
                     <a name="//apple_ref/swift/Method/setDouble(_:forSetting:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter9setDoubleUS0___FQPS0_FTSd10forSettingSS_T_">setDouble(_:forSetting:)</a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter9setDoubleuRq_S0__Fq_FTSd10forSettingSS_T_">setDouble(_:forSetting:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -268,6 +187,10 @@ to store and remove values.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Changes the value of the given setting to the specified <code>Double</code>.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
 
                       </div>
                       <div class="declaration">
@@ -278,48 +201,15 @@ to store and remove values.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>value</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The new value for the setting</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>settingName</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name of the setting whose value is to be changed</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter9setStringUS0___FQPS0_FTSS10forSettingSS_T_"></a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter9setStringuRq_S0__Fq_FTSS10forSettingSS_T_"></a>
                     <a name="//apple_ref/swift/Method/setString(_:forSetting:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter9setStringUS0___FQPS0_FTSS10forSettingSS_T_">setString(_:forSetting:)</a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter9setStringuRq_S0__Fq_FTSS10forSettingSS_T_">setString(_:forSetting:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -328,6 +218,10 @@ to store and remove values.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Changes the value of the given setting to the specified string.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
 
                       </div>
                       <div class="declaration">
@@ -338,48 +232,15 @@ to store and remove values.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>value</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The new value for the setting</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>settingName</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name of the setting whose value is to be changed</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter8setArrayUS0___FQPS0_FTGSaPSs9AnyObject__10forSettingSS_T_"></a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter8setArrayuRq_S0__Fq_FTGSaPSs9AnyObject__10forSettingSS_T_"></a>
                     <a name="//apple_ref/swift/Method/setArray(_:forSetting:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter8setArrayUS0___FQPS0_FTGSaPSs9AnyObject__10forSettingSS_T_">setArray(_:forSetting:)</a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter8setArrayuRq_S0__Fq_FTGSaPSs9AnyObject__10forSettingSS_T_">setArray(_:forSetting:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -388,6 +249,10 @@ to store and remove values.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Changes the value of the given setting to the specified array.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
 
                       </div>
                       <div class="declaration">
@@ -398,48 +263,15 @@ to store and remove values.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>value</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The new value for the setting</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>settingName</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name of the setting whose value is to be changed</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter13setDictionaryUS0___FQPS0_FTGVSs10DictionaryCSo8NSObjectPSs9AnyObject__10forSettingSS_T_"></a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter13setDictionaryuRq_S0__Fq_FTGVSs10DictionaryCSo8NSObjectPSs9AnyObject__10forSettingSS_T_"></a>
                     <a name="//apple_ref/swift/Method/setDictionary(_:forSetting:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter13setDictionaryUS0___FQPS0_FTGVSs10DictionaryCSo8NSObjectPSs9AnyObject__10forSettingSS_T_">setDictionary(_:forSetting:)</a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter13setDictionaryuRq_S0__Fq_FTGVSs10DictionaryCSo8NSObjectPSs9AnyObject__10forSettingSS_T_">setDictionary(_:forSetting:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -448,6 +280,10 @@ to store and remove values.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Changes the value of the given setting to the specified dictionary.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
 
                       </div>
                       <div class="declaration">
@@ -458,48 +294,15 @@ to store and remove values.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>value</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The new value for the setting</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>settingName</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name of the setting whose value is to be changed</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter13removeSettingUS0___FQPS0_FSST_"></a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter13removeSettinguRq_S0__Fq_FSST_"></a>
                     <a name="//apple_ref/swift/Method/removeSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter13removeSettingUS0___FQPS0_FSST_">removeSetting(_:)</a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter13removeSettinguRq_S0__Fq_FSST_">removeSetting(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -508,6 +311,8 @@ to store and remove values.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Removes the existing value (if any) for the setting with the given name.</p>
+
+<p>:param:     name The name of the setting whose value is to be removed.</p>
 
                       </div>
                       <div class="declaration">
@@ -518,26 +323,6 @@ to store and remove values.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>name</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name of the setting whose value is to be removed.</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
@@ -546,8 +331,8 @@ to store and remove values.</p>
           </section>
         </section>
         <section id="footer">
-          <p>© 2014-2015 <a class="link" href="http://tech.gilt.com/" target="_blank" rel="external">Gilt Groupe</a>. All rights reserved. (Last updated: 2015-07-01)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.2.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>© 2015 <a class="link" href="http://tech.gilt.com/" target="_blank" rel="external">Gilt Groupe</a></p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.3.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

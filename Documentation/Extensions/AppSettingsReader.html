@@ -13,13 +13,13 @@
     <a title="AppSettingsReader Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">CleanroomAppSettings Docs</a> (100% documented)</p>
+        <p><a href="../index.html">CleanroomAppSettings.git Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/emaloney/CleanroomAppSettings.git"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
-        <a href="../index.html">CleanroomAppSettings Reference</a>
+        <a href="../index.html">CleanroomAppSettings.git Reference</a>
         <img id="carat" src="../img/carat.png" />
         AppSettingsReader Extension Reference
       </p>
@@ -64,6 +64,12 @@
         <section>
           <section class="section">
             <h1>AppSettingsReader</h1>
+              <div class="declaration">
+                <div class="Swift">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AppSettingsReader</span></code></pre>
+
+                </div>
+              </div>
             <p>Entities conforming to this protocol are capable of providing values for
 <em>application settings</em>.</p>
 
@@ -85,9 +91,9 @@ underlying implementation.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader14valueOfSettingERR"></a>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_14valueOfSettinguRq_S0__Fq_FTSS11withDefaultPSs9AnyObject__PS1__"></a>
                     <a name="//apple_ref/swift/Method/valueOfSetting(_:withDefault:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader14valueOfSettingERR">valueOfSetting(_:withDefault:)</a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_14valueOfSettinguRq_S0__Fq_FTSS11withDefaultPSs9AnyObject__PS1__">valueOfSetting(_:withDefault:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -96,6 +102,14 @@ underlying implementation.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Returns the value of the setting with the specified name.</p>
+
+<p>:param:     name The setting name</p>
+
+<p>:param:     defaultValue A default value to use in case there is no existing
+            value for the given setting.</p>
+
+<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
+            currently no value for the specified setting.</p>
 
                       </div>
                       <div class="declaration">
@@ -107,55 +121,15 @@ underlying implementation.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>name</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The setting name</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>defaultValue</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>A default value to use in case there is no existing
-value for the given setting.</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The value of the setting, or <code>defaultValue</code> if there is
-currently no value for the specified setting.</p>
-
-                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader18boolValueOfSettingERR"></a>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_18boolValueOfSettinguRq_S0__Fq_FSSGSqSb_"></a>
                     <a name="//apple_ref/swift/Method/boolValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader18boolValueOfSettingERR">boolValueOfSetting(_:)</a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_18boolValueOfSettinguRq_S0__Fq_FSSGSqSb_">boolValueOfSetting(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -165,6 +139,12 @@ currently no value for the specified setting.</p>
                       <div class="abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as a
 boolean value.</p>
+
+<p>:param:     name The setting name</p>
+
+<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
+            the setting, or if the value couldn&rsquo;t be interpreted as a
+            <code>Bool</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -176,32 +156,43 @@ boolean value.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>name</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The setting name</p>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_18boolValueOfSettinguRq_S0__Fq_FTSS11withDefaultSb_Sb"></a>
+                    <a name="//apple_ref/swift/Method/boolValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_18boolValueOfSettinguRq_S0__Fq_FTSS11withDefaultSb_Sb">boolValueOfSetting(_:withDefault:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the value of the setting with the specified name, interpreted as a
+boolean value.</p>
 
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+<p>:param:     name The setting name</p>
+
+<p>:param:     defaultValue A default value to use in case there is no existing
+            value of the correct type for the given setting.</p>
+
+<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
+            currently no value for the specified setting that can be
+            interpreted as a <code>Bool</code>.</p>
+
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The value of the setting. Will be <code>nil</code> if there is no value for
-the setting, or if the value couldn&rsquo;t be interpreted as a
-<code>Bool</code>.</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">boolValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span>
+        <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -209,9 +200,9 @@ the setting, or if the value couldn&rsquo;t be interpreted as a
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader21numericValueOfSettingERR"></a>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_21numericValueOfSettinguRq_S0__Fq_FSSGSqCSo8NSNumber_"></a>
                     <a name="//apple_ref/swift/Method/numericValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader21numericValueOfSettingERR">numericValueOfSetting(_:)</a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_21numericValueOfSettinguRq_S0__Fq_FSSGSqCSo8NSNumber_">numericValueOfSetting(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -221,6 +212,12 @@ the setting, or if the value couldn&rsquo;t be interpreted as a
                       <div class="abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as a
 numeric value.</p>
+
+<p>:param:     name The setting name</p>
+
+<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
+            the setting, or if the value couldn&rsquo;t be interpreted as an
+            <code>NSNumber</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -232,32 +229,43 @@ numeric value.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>name</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The setting name</p>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_21numericValueOfSettinguRq_S0__Fq_FTSS11withDefaultCSo8NSNumber_S1_"></a>
+                    <a name="//apple_ref/swift/Method/numericValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_21numericValueOfSettinguRq_S0__Fq_FTSS11withDefaultCSo8NSNumber_S1_">numericValueOfSetting(_:withDefault:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the value of the setting with the specified name, interpreted as a
+numeric value.</p>
 
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+<p>:param:     name The setting name</p>
+
+<p>:param:     defaultValue A default value to use in case there is no existing
+            value of the correct type for the given setting.</p>
+
+<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
+            currently no value for the specified setting that can be
+            interpreted as an <code>NSNumber</code>.</p>
+
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The value of the setting. Will be <code>nil</code> if there is no value for
-the setting, or if the value couldn&rsquo;t be interpreted as an
-<code>NSNumber</code>.</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">numericValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span>
+        <span class="o">-&gt;</span> <span class="kt">NSNumber</span></code></pre>
 
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -265,9 +273,9 @@ the setting, or if the value couldn&rsquo;t be interpreted as an
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader17intValueOfSettingERR"></a>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_17intValueOfSettinguRq_S0__Fq_FSSGSqSi_"></a>
                     <a name="//apple_ref/swift/Method/intValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader17intValueOfSettingERR">intValueOfSetting(_:)</a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_17intValueOfSettinguRq_S0__Fq_FSSGSqSi_">intValueOfSetting(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -277,6 +285,12 @@ the setting, or if the value couldn&rsquo;t be interpreted as an
                       <div class="abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as an
 integer value.</p>
+
+<p>:param:     name The setting name</p>
+
+<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
+            the setting, or if the value couldn&rsquo;t be interpreted as an
+            <code>Int</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -288,32 +302,43 @@ integer value.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>name</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The setting name</p>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_17intValueOfSettinguRq_S0__Fq_FTSS11withDefaultSi_Si"></a>
+                    <a name="//apple_ref/swift/Method/intValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_17intValueOfSettinguRq_S0__Fq_FTSS11withDefaultSi_Si">intValueOfSetting(_:withDefault:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the value of the setting with the specified name, interpreted as an
+integer value.</p>
 
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+<p>:param:     name The setting name</p>
+
+<p>:param:     defaultValue A default value to use in case there is no existing
+            value of the correct type for the given setting.</p>
+
+<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
+            currently no value for the specified setting that can be
+            interpreted as an <code>Int</code>.</p>
+
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The value of the setting. Will be <code>nil</code> if there is no value for
-the setting, or if the value couldn&rsquo;t be interpreted as an
-<code>Int</code>.</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">intValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span>
+        <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -321,9 +346,9 @@ the setting, or if the value couldn&rsquo;t be interpreted as an
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader20doubleValueOfSettingERR"></a>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_20doubleValueOfSettinguRq_S0__Fq_FSSGSqSd_"></a>
                     <a name="//apple_ref/swift/Method/doubleValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader20doubleValueOfSettingERR">doubleValueOfSetting(_:)</a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_20doubleValueOfSettinguRq_S0__Fq_FSSGSqSd_">doubleValueOfSetting(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -333,6 +358,12 @@ the setting, or if the value couldn&rsquo;t be interpreted as an
                       <div class="abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as a
 floating-point value.</p>
+
+<p>:param:     name The setting name</p>
+
+<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
+            the setting, or if the value couldn&rsquo;t be interpreted as a
+            <code>Double</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -344,32 +375,43 @@ floating-point value.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>name</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The setting name</p>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_20doubleValueOfSettinguRq_S0__Fq_FTSS11withDefaultSd_Sd"></a>
+                    <a name="//apple_ref/swift/Method/doubleValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_20doubleValueOfSettinguRq_S0__Fq_FTSS11withDefaultSd_Sd">doubleValueOfSetting(_:withDefault:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the value of the setting with the specified name, interpreted as a
+floating-point value.</p>
 
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+<p>:param:     name The setting name</p>
+
+<p>:param:     defaultValue A default value to use in case there is no existing
+            value of the correct type for the given setting.</p>
+
+<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
+            currently no value for the specified setting that can be
+            interpreted as a <code>Double</code>.</p>
+
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The value of the setting. Will be <code>nil</code> if there is no value for
-the setting, or if the value couldn&rsquo;t be interpreted as a
-<code>Double</code>.</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">doubleValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span>
+        <span class="o">-&gt;</span> <span class="kt">Double</span></code></pre>
 
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -377,9 +419,9 @@ the setting, or if the value couldn&rsquo;t be interpreted as a
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader20stringValueOfSettingERR"></a>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_20stringValueOfSettinguRq_S0__Fq_FSSGSqSS_"></a>
                     <a name="//apple_ref/swift/Method/stringValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader20stringValueOfSettingERR">stringValueOfSetting(_:)</a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_20stringValueOfSettinguRq_S0__Fq_FSSGSqSS_">stringValueOfSetting(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -389,6 +431,12 @@ the setting, or if the value couldn&rsquo;t be interpreted as a
                       <div class="abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as a
 string value.</p>
+
+<p>:param:     name The setting name</p>
+
+<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
+            the setting, or if the value couldn&rsquo;t be interpreted as a
+            <code>String</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -400,32 +448,43 @@ string value.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>name</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The setting name</p>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_20stringValueOfSettinguRq_S0__Fq_FTSS11withDefaultSS_SS"></a>
+                    <a name="//apple_ref/swift/Method/stringValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_20stringValueOfSettinguRq_S0__Fq_FTSS11withDefaultSS_SS">stringValueOfSetting(_:withDefault:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the value of the setting with the specified name, interpreted as a
+string value.</p>
 
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+<p>:param:     name The setting name</p>
+
+<p>:param:     defaultValue A default value to use in case there is no existing
+            value of the correct type for the given setting.</p>
+
+<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
+            currently no value for the specified setting that can be
+            interpreted as a <code>String</code>.</p>
+
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The value of the setting. Will be <code>nil</code> if there is no value for
-the setting, or if the value couldn&rsquo;t be interpreted as a
-<code>String</code>.</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">stringValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+        <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -433,9 +492,9 @@ the setting, or if the value couldn&rsquo;t be interpreted as a
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader19arrayValueOfSettingERR"></a>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_19arrayValueOfSettinguRq_S0__Fq_FSSGSqCSo7NSArray_"></a>
                     <a name="//apple_ref/swift/Method/arrayValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader19arrayValueOfSettingERR">arrayValueOfSetting(_:)</a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_19arrayValueOfSettinguRq_S0__Fq_FSSGSqCSo7NSArray_">arrayValueOfSetting(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -445,6 +504,12 @@ the setting, or if the value couldn&rsquo;t be interpreted as a
                       <div class="abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as an
 array.</p>
+
+<p>:param:     name The setting name</p>
+
+<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
+            the setting, or if the value couldn&rsquo;t be interpreted as an
+            <code>NSArray</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -456,32 +521,43 @@ array.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>name</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The setting name</p>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_19arrayValueOfSettinguRq_S0__Fq_FTSS11withDefaultCSo7NSArray_S1_"></a>
+                    <a name="//apple_ref/swift/Method/arrayValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_19arrayValueOfSettinguRq_S0__Fq_FTSS11withDefaultCSo7NSArray_S1_">arrayValueOfSetting(_:withDefault:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the value of the setting with the specified name, interpreted as an
+array.</p>
 
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+<p>:param:     name The setting name</p>
+
+<p>:param:     defaultValue A default value to use in case there is no existing
+            value of the correct type for the given setting.</p>
+
+<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
+            currently no value for the specified setting that can be
+            interpreted as an <code>NSArray</code>.</p>
+
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The value of the setting. Will be <code>nil</code> if there is no value for
-the setting, or if the value couldn&rsquo;t be interpreted as an
-<code>NSArray</code>.</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">arrayValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">NSArray</span><span class="p">)</span>
+        <span class="o">-&gt;</span> <span class="kt">NSArray</span></code></pre>
 
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -489,9 +565,9 @@ the setting, or if the value couldn&rsquo;t be interpreted as an
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader24dictionaryValueOfSettingERR"></a>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_24dictionaryValueOfSettinguRq_S0__Fq_FSSGSqCSo12NSDictionary_"></a>
                     <a name="//apple_ref/swift/Method/dictionaryValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader24dictionaryValueOfSettingERR">dictionaryValueOfSetting(_:)</a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_24dictionaryValueOfSettinguRq_S0__Fq_FSSGSqCSo12NSDictionary_">dictionaryValueOfSetting(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -501,6 +577,12 @@ the setting, or if the value couldn&rsquo;t be interpreted as an
                       <div class="abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as a
 dictionary.</p>
+
+<p>:param:     name The setting name</p>
+
+<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
+            the setting, or if the value couldn&rsquo;t be interpreted as an
+            <code>NSDictionary</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -512,32 +594,43 @@ dictionary.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>name</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The setting name</p>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_24dictionaryValueOfSettinguRq_S0__Fq_FTSS11withDefaultCSo12NSDictionary_S1_"></a>
+                    <a name="//apple_ref/swift/Method/dictionaryValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FeRq_20CleanroomAppSettings17AppSettingsReader_S_S0_24dictionaryValueOfSettinguRq_S0__Fq_FTSS11withDefaultCSo12NSDictionary_S1_">dictionaryValueOfSetting(_:withDefault:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the value of the setting with the specified name, interpreted as
+a dictionary.</p>
 
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+<p>:param:     name The setting name</p>
+
+<p>:param:     defaultValue A default value to use in case there is no existing
+            value of the correct type for the given setting.</p>
+
+<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
+            currently no value for the specified setting that can be
+            interpreted as an <code>NSDictionary</code>.</p>
+
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The value of the setting. Will be <code>nil</code> if there is no value for
-the setting, or if the value couldn&rsquo;t be interpreted as an
-<code>NSDictionary</code>.</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">dictionaryValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">NSDictionary</span><span class="p">)</span>
+        <span class="o">-&gt;</span> <span class="kt">NSDictionary</span></code></pre>
 
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -547,8 +640,8 @@ the setting, or if the value couldn&rsquo;t be interpreted as an
           </section>
         </section>
         <section id="footer">
-          <p>© 2014-2015 <a class="link" href="http://tech.gilt.com/" target="_blank" rel="external">Gilt Groupe</a>. All rights reserved. (Last updated: 2015-07-01)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.2.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>© 2015 <a class="link" href="http://tech.gilt.com/" target="_blank" rel="external">Gilt Groupe</a></p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.3.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

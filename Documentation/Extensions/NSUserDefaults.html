@@ -13,13 +13,13 @@
     <a title="NSUserDefaults Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">CleanroomAppSettings Docs</a> (100% documented)</p>
+        <p><a href="../index.html">CleanroomAppSettings.git Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/emaloney/CleanroomAppSettings.git"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
-        <a href="../index.html">CleanroomAppSettings Reference</a>
+        <a href="../index.html">CleanroomAppSettings.git Reference</a>
         <img id="carat" src="../img/carat.png" />
         NSUserDefaults Extension Reference
       </p>
@@ -86,6 +86,8 @@
                         <p>Returns the names of the <code>NSUserDefaults</code> keys for which values currently
 exist.</p>
 
+<p>:returns:   The application settings names.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -94,11 +96,6 @@ exist.</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">settingNames</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The application settings names.</p>
-
                       </div>
                     </section>
                   </div>
@@ -118,6 +115,10 @@ exist.</p>
                       <div class="abstract">
                         <p>Returns the value associated with the given <code>NSUserDefaults</code> key.</p>
 
+<p>:param:     name The name of the setting, or key.</p>
+
+<p>:returns:   The value, or <code>nil</code> if no value exists.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -127,31 +128,6 @@ exist.</p>
         <span class="o">-&gt;</span> <span class="kt">AnyObject</span><span class="p">?</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>name</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name of the setting, or key.</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The value, or <code>nil</code> if no value exists.</p>
-
                       </div>
                     </section>
                   </div>
@@ -176,6 +152,10 @@ exist.</p>
                         <p>Extends the <code>AppSettingsReader</code>&rsquo;s subscripting accessor to provide the
 ability to set new values.</p>
 
+<p>:param:     settingName The name of the setting.</p>
+
+<p>:param:     newValue The new value for the setting with the given name.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -184,39 +164,6 @@ ability to set new values.</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">setValue</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">,</span> <span class="n">forSetting</span> <span class="nv">settingName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>settingName</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name of the setting.</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>newValue</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The new value for the setting with the given name.</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -236,6 +183,8 @@ ability to set new values.</p>
                       <div class="abstract">
                         <p>Removes the existing value (if any) for the setting with the given name.</p>
 
+<p>:param:     name The name of the setting whose value is to be removed.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -245,26 +194,6 @@ ability to set new values.</p>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>name</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name of the setting whose value is to be removed.</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </section>
                   </div>
                 </li>
@@ -273,8 +202,8 @@ ability to set new values.</p>
           </section>
         </section>
         <section id="footer">
-          <p>© 2014-2015 <a class="link" href="http://tech.gilt.com/" target="_blank" rel="external">Gilt Groupe</a>. All rights reserved. (Last updated: 2015-07-01)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.2.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>© 2015 <a class="link" href="http://tech.gilt.com/" target="_blank" rel="external">Gilt Groupe</a></p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.3.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
