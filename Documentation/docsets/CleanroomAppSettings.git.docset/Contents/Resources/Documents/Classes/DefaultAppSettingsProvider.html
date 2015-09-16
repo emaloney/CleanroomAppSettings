@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DefaultAppSettingsProvider Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/DefaultAppSettingsProvider" class="dashAnchor"></a>
+    <a title="DefaultAppSettingsProvider Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CleanroomAppSettings Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/emaloney/CleanroomAppSettings"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CleanroomAppSettings Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        DefaultAppSettingsProvider Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+          <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppSettingsReader.html">AppSettingsReader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppSettingsWriter.html">AppSettingsWriter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultAppSettings.html">DefaultAppSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultAppSettingsProvider.html">DefaultAppSettingsProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultAppSettingsStorage.html">DefaultAppSettingsStorage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DictionaryAppSettingsProvider.html">DictionaryAppSettingsProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MutableDictionaryAppSettingsStorage.html">MutableDictionaryAppSettingsStorage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+          <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AppSettingsProvider.html">AppSettingsProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AppSettingsStorage.html">AppSettingsStorage</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>DefaultAppSettingsProvider</h1>
+            <p>The default implementation of the <code>AppSettingsProvider</code> protocol.
+Uses <code>NSUserDefaults</code> under the hood.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC20CleanroomAppSettings26DefaultAppSettingsProvider12userDefaultsCSo14NSUserDefaults"></a>
+                    <a name="//apple_ref/swift/Property/userDefaults" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC20CleanroomAppSettings26DefaultAppSettingsProvider12userDefaultsCSo14NSUserDefaults">userDefaults</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The <code>NSUserDefaults</code> instance used by the receiver.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">userDefaults</span><span class="p">:</span> <span class="kt">NSUserDefaults</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC20CleanroomAppSettings26DefaultAppSettingsProvider12settingNamesFS0_FT_GSaSS_"></a>
+                    <a name="//apple_ref/swift/Method/settingNames()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20CleanroomAppSettings26DefaultAppSettingsProvider12settingNamesFS0_FT_GSaSS_">settingNames()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the names of the application settings for which values currently
+exist.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">settingNames</span><span class="p">()</span>
+        <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The application settings names</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC20CleanroomAppSettings26DefaultAppSettingsProvider14valueOfSettingFS0_FSSGSqCSo8NSObject_"></a>
+                    <a name="//apple_ref/swift/Method/valueOfSetting(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC20CleanroomAppSettings26DefaultAppSettingsProvider14valueOfSettingFS0_FSSGSqCSo8NSObject_">valueOfSetting(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the value of the setting with the specified name.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">valueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+        <span class="o">-&gt;</span> <span class="kt">NSObject</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The setting name</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting, or <code>nil</code> if none exists</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2014-2015 <a class="link" href="http://tech.gilt.com/" target="_blank" rel="external">Gilt Groupe</a>. All rights reserved. (Last updated: 2015-06-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.2.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
