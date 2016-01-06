@@ -67,7 +67,7 @@ class AppSettingsTests: XCTestCase
         XCTAssertNotNil(reader.dictionaryValueOfSetting("threeOrdinals"))
 
         // test values
-        XCTAssertEqual(reader.valueOfSetting("foobar") as! String, "foo:bar")
+        XCTAssertEqual(reader.valueOfSetting("foobar") as? String, "foo:bar")
         XCTAssertEqual(reader.boolValueOfSetting("trueValue")!, true)
         XCTAssertEqual(reader.boolValueOfSetting("falseValue")!, false)
         XCTAssertEqual(reader.intValueOfSetting("zeroInt")!, 0)
@@ -91,7 +91,7 @@ class AppSettingsTests: XCTestCase
 
         // test default values for nonexistent keys
         XCTAssertNotNil(reader.valueOfSetting("nonexistent", withDefault: "foo"))
-        XCTAssertEqual(reader.valueOfSetting("nonexistent", withDefault: "foo") as! String, "foo")
+        XCTAssertEqual(reader.valueOfSetting("nonexistent", withDefault: "foo") as? String, "foo")
         XCTAssertNotNil(reader.boolValueOfSetting("nonexistent", withDefault: true))
         XCTAssertEqual(reader.boolValueOfSetting("nonexistent", withDefault: true), true)
         XCTAssertNotNil(reader.intValueOfSetting("nonexistent", withDefault: 42))
@@ -106,7 +106,7 @@ class AppSettingsTests: XCTestCase
         XCTAssertEqual(reader.dictionaryValueOfSetting("nonexistent", withDefault: [1: 2, "free": "four"]), [1: 2, "free": "four"])
 
         // test default values for existing keys
-        XCTAssertNotEqual(reader.valueOfSetting("foobar", withDefault: "boo:far") as! String, "boo:far")
+        XCTAssertNotEqual(reader.valueOfSetting("foobar", withDefault: "boo:far") as? String, "boo:far")
         XCTAssertNotEqual(reader.boolValueOfSetting("trueValue", withDefault: false), false)
         XCTAssertNotEqual(reader.boolValueOfSetting("falseValue", withDefault: true), true)
         XCTAssertNotEqual(reader.intValueOfSetting("zeroInt", withDefault: 1), 1)
@@ -143,8 +143,10 @@ class AppSettingsTests: XCTestCase
         // test removing a value (alternate verification)
         writer.setBool(true, forSetting: "notRemoved2")
         XCTAssertNotNil(writer.objectForKey("notRemoved2"))
+        dump(writer.objectForKey("notRemoved2"))
         writer.removeSetting("notRemoved2")
-        XCTAssertNil(writer.objectForKey("notRemoved2"))
+        dump(writer.objectForKey("notRemoved2"))
+        XCTAssert(writer.objectForKey("notRemoved2") == nil)
     }
 
     func testNSUserDefaultsImplementation()

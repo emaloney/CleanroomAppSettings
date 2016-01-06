@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AppSettingsWriter Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/AppSettingsWriter" class="dashAnchor"></a>
+    <a title="AppSettingsWriter Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CleanroomAppSettings Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/emaloney/CleanroomAppSettings"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CleanroomAppSettings Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        AppSettingsWriter Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/NSDictionary.html">NSDictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSMutableDictionary.html">NSMutableDictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSUserDefaults.html">NSUserDefaults</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AppSettingsReader.html">AppSettingsReader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/AppSettingsWriter.html">AppSettingsWriter</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AppSettingsWriter</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AppSettingsWriter</span><span class="p">:</span> <span class="kt">AppSettingsReader</span></code></pre>
+
+                </div>
+              </div>
+            <p>This protocol extends <code><a href="../Protocols/AppSettingsReader.html">AppSettingsReader</a></code> by adding the ability
+to store and remove values.</p>
+
+<p>This framework also extends <code><a href="../Extensions/NSUserDefaults.html">NSUserDefaults</a></code>, allowing it to be used as an
+<code>AppSettingsWriter</code>.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter8setValueuRq_S0__Fq_FTPSs9AnyObject_10forSettingSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/setValue(_:forSetting:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter8setValueuRq_S0__Fq_FTPSs9AnyObject_10forSettingSS_T_">setValue(_:forSetting:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the value of the given setting to the specified object.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setValue</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">,</span> <span class="n">forSetting</span> <span class="nv">settingName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter7setBooluRq_S0__Fq_FTSb10forSettingSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/setBool(_:forSetting:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter7setBooluRq_S0__Fq_FTSb10forSettingSS_T_">setBool(_:forSetting:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the value of the given setting to the specified boolean.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Changes the value of the given setting to the specified boolean.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setBool</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">forSetting</span> <span class="nv">settingName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter6setIntuRq_S0__Fq_FTSi10forSettingSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/setInt(_:forSetting:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter6setIntuRq_S0__Fq_FTSi10forSettingSS_T_">setInt(_:forSetting:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the value of the given setting to the specified integer.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Changes the value of the given setting to the specified integer.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setInt</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">forSetting</span> <span class="nv">settingName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter9setDoubleuRq_S0__Fq_FTSd10forSettingSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/setDouble(_:forSetting:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter9setDoubleuRq_S0__Fq_FTSd10forSettingSS_T_">setDouble(_:forSetting:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the value of the given setting to the specified <code>Double</code>.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Changes the value of the given setting to the specified <code>Double</code>.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setDouble</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="n">forSetting</span> <span class="nv">settingName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter9setStringuRq_S0__Fq_FTSS10forSettingSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/setString(_:forSetting:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter9setStringuRq_S0__Fq_FTSS10forSettingSS_T_">setString(_:forSetting:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the value of the given setting to the specified string.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Changes the value of the given setting to the specified string.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setString</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">forSetting</span> <span class="nv">settingName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter8setArrayuRq_S0__Fq_FTGSaPSs9AnyObject__10forSettingSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/setArray(_:forSetting:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter8setArrayuRq_S0__Fq_FTGSaPSs9AnyObject__10forSettingSS_T_">setArray(_:forSetting:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the value of the given setting to the specified array.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Changes the value of the given setting to the specified array.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setArray</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyObject</span><span class="p">],</span> <span class="n">forSetting</span> <span class="nv">settingName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter13setDictionaryuRq_S0__Fq_FTGVSs10DictionaryCSo8NSObjectPSs9AnyObject__10forSettingSS_T_"></a>
+                    <a name="//apple_ref/swift/Method/setDictionary(_:forSetting:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter13setDictionaryuRq_S0__Fq_FTGVSs10DictionaryCSo8NSObjectPSs9AnyObject__10forSettingSS_T_">setDictionary(_:forSetting:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes the value of the given setting to the specified dictionary.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Changes the value of the given setting to the specified dictionary.</p>
+
+<p>:param: value The new value for the setting</p>
+
+<p>:param: settingName The name of the setting whose value is to be changed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">setDictionary</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSObject</span> <span class="p">:</span> <span class="kt">AnyObject</span><span class="p">],</span> <span class="n">forSetting</span> <span class="nv">settingName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsWriter13removeSettinguRq_S0__Fq_FSST_"></a>
+                    <a name="//apple_ref/swift/Method/removeSetting(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsWriter13removeSettinguRq_S0__Fq_FSST_">removeSetting(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes the existing value (if any) for the setting with the given name.</p>
+
+<p>:param:     name The name of the setting whose value is to be removed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">removeSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2016 <a class="link" href="http://tech.gilt.com/" target="_blank" rel="external">Gilt Groupe</a></p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
