@@ -8,11 +8,9 @@ CleanroomAppSettings is part of [the Cleanroom Project](https://github.com/gilt/
 
 
 
-### Swift 2.1 compatibility
+### Swift 2.2 compatibility
 
-The `master` branch of this project is **Swift 2.1 compliant** and therefore **requires Xcode 7.1 or higher** to compile.
-
-It is also known to work with Swift 2.1.1 in Xcode 7.2.
+The `master` branch of this project is **Swift 2.2 compliant** and therefore **requires Xcode 7.3 or higher** to compile.
 
 ### License
 
@@ -29,7 +27,7 @@ You’ll need to [integrate CleanroomAppSettings into your project](https://gith
 
 - [Manual integration](https://github.com/emaloney/CleanroomAppSettings/blob/master/INTEGRATION.md#manual-integration), wherein you embed CleanroomAppSettings’s Xcode project within your own, **_or_**
 - [Using the Carthage dependency manager](https://github.com/emaloney/CleanroomAppSettings/blob/master/INTEGRATION.md#carthage-integration) to build a framework that you then embed in your application.
- 
+
 Once integrated, just add the following `import` statement to any Swift file where you want to use CleanroomAppSettings:
 
 ```swift
@@ -44,7 +42,7 @@ For detailed information on using CleanroomAppSettings, [API documentation](http
 
 ## About
 
-The Cleanroom Project began as an experiment to re-imagine Gilt’s iOS codebase in a legacy-free, Swift-based incarnation. 
+The Cleanroom Project began as an experiment to re-imagine Gilt’s iOS codebase in a legacy-free, Swift-based incarnation.
 
 Since then, we’ve expanded the Cleanroom Project to include multi-platform support. Much of our codebase now supports tvOS in addition to iOS, and our lower-level code is usable on Mac OS X and watchOS as well.
 
