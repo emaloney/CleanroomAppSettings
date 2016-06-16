@@ -102,8 +102,9 @@ class AppSettingsTests: XCTestCase
         XCTAssertEqual(reader.stringValueOfSetting("nonexistent", withDefault: "foo/bar"), "foo/bar")
         XCTAssertNotNil(reader.arrayValueOfSetting("nonexistent", withDefault: [1, 3, 5, 7, 9]))
         XCTAssertEqual(reader.arrayValueOfSetting("nonexistent", withDefault: [1, 3, 5, 7, 9]), [1, 3, 5, 7, 9])
-        XCTAssertNotNil(reader.dictionaryValueOfSetting("nonexistent", withDefault: [1: 2, "free": "four"]))
-        XCTAssertEqual(reader.dictionaryValueOfSetting("nonexistent", withDefault: [1: 2, "free": "four"]), [1: 2, "free": "four"])
+
+        XCTAssertNotNil(reader.dictionaryValueOfSetting("nonexistent", withDefault: ["one": 2, "free": "four"]))
+        XCTAssertEqual(reader.dictionaryValueOfSetting("nonexistent", withDefault: ["one": 2, "free": "four"]), ["one": 2, "free": "four"])
 
         // test default values for existing keys
         XCTAssertNotEqual(reader.valueOfSetting("foobar", withDefault: "boo:far") as? String, "boo:far")
