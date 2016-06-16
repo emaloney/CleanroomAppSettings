@@ -40,7 +40,7 @@ public protocol AppSettingsReader
 
     :returns:   The value of the setting, or `nil` if no such setting exists.
     */
-    func valueOfSetting(name: String)
+    func valueOfSetting(_ name: String)
         -> AnyObject?
 
     /**
@@ -54,7 +54,7 @@ public protocol AppSettingsReader
     :returns:   The value of the setting, or `defaultValue` if there is
                 currently no value for the specified setting.
     */
-    func valueOfSetting(name: String, withDefault defaultValue: AnyObject)
+    func valueOfSetting(_ name: String, withDefault defaultValue: AnyObject)
         -> AnyObject
 
     /**
@@ -67,7 +67,7 @@ public protocol AppSettingsReader
                 the setting, or if the value couldn't be interpreted as a
                 `Bool`.
     */
-    func boolValueOfSetting(name: String)
+    func boolValueOfSetting(_ name: String)
         -> Bool?
 
     /**
@@ -83,7 +83,7 @@ public protocol AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as a `Bool`.
     */
-    func boolValueOfSetting(name: String, withDefault defaultValue: Bool)
+    func boolValueOfSetting(_ name: String, withDefault defaultValue: Bool)
         -> Bool
 
     /**
@@ -96,7 +96,7 @@ public protocol AppSettingsReader
                 the setting, or if the value couldn't be interpreted as an
                 `NSNumber`.
     */
-    func numericValueOfSetting(name: String)
+    func numericValueOfSetting(_ name: String)
         -> NSNumber?
 
     /**
@@ -112,7 +112,7 @@ public protocol AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as an `NSNumber`.
     */
-    func numericValueOfSetting(name: String, withDefault defaultValue: NSNumber)
+    func numericValueOfSetting(_ name: String, withDefault defaultValue: NSNumber)
         -> NSNumber
 
     /**
@@ -125,7 +125,7 @@ public protocol AppSettingsReader
                 the setting, or if the value couldn't be interpreted as an
                 `Int`.
     */
-    func intValueOfSetting(name: String)
+    func intValueOfSetting(_ name: String)
         -> Int?
 
     /**
@@ -141,7 +141,7 @@ public protocol AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as an `Int`.
     */
-    func intValueOfSetting(name: String, withDefault defaultValue: Int)
+    func intValueOfSetting(_ name: String, withDefault defaultValue: Int)
         -> Int
 
     /**
@@ -154,7 +154,7 @@ public protocol AppSettingsReader
                 the setting, or if the value couldn't be interpreted as a
                 `Double`.
     */
-    func doubleValueOfSetting(name: String)
+    func doubleValueOfSetting(_ name: String)
         -> Double?
 
     /**
@@ -170,7 +170,7 @@ public protocol AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as a `Double`.
     */
-    func doubleValueOfSetting(name: String, withDefault defaultValue: Double)
+    func doubleValueOfSetting(_ name: String, withDefault defaultValue: Double)
         -> Double
 
     /**
@@ -183,7 +183,7 @@ public protocol AppSettingsReader
                 the setting, or if the value couldn't be interpreted as a
                 `String`.
     */
-    func stringValueOfSetting(name: String)
+    func stringValueOfSetting(_ name: String)
         -> String?
 
     /**
@@ -199,7 +199,7 @@ public protocol AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as a `String`.
     */
-    func stringValueOfSetting(name: String, withDefault defaultValue: String)
+    func stringValueOfSetting(_ name: String, withDefault defaultValue: String)
         -> String
 
     /**
@@ -212,7 +212,7 @@ public protocol AppSettingsReader
                 the setting, or if the value couldn't be interpreted as an
                 `NSArray`.
     */
-    func arrayValueOfSetting(name: String)
+    func arrayValueOfSetting(_ name: String)
         -> NSArray?
 
     /**
@@ -228,7 +228,7 @@ public protocol AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as an `NSArray`.
     */
-    func arrayValueOfSetting(name: String, withDefault defaultValue: NSArray)
+    func arrayValueOfSetting(_ name: String, withDefault defaultValue: NSArray)
         -> NSArray
 
     /**
@@ -241,7 +241,7 @@ public protocol AppSettingsReader
                 the setting, or if the value couldn't be interpreted as an
                 `NSDictionary`.
     */
-    func dictionaryValueOfSetting(name: String)
+    func dictionaryValueOfSetting(_ name: String)
         -> NSDictionary?
 
     /**
@@ -257,7 +257,7 @@ public protocol AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as an `NSDictionary`.
     */
-    func dictionaryValueOfSetting(name: String, withDefault defaultValue: NSDictionary)
+    func dictionaryValueOfSetting(_ name: String, withDefault defaultValue: NSDictionary)
         -> NSDictionary
 }
 
@@ -274,7 +274,7 @@ extension AppSettingsReader
     :returns:   The value of the setting, or `defaultValue` if there is
                 currently no value for the specified setting.
     */
-    public func valueOfSetting(name: String, withDefault defaultValue: AnyObject)
+    public func valueOfSetting(_ name: String, withDefault defaultValue: AnyObject)
         -> AnyObject
     {
         guard let obj = valueOfSetting(name) else {
@@ -294,7 +294,7 @@ extension AppSettingsReader
                 the setting, or if the value couldn't be interpreted as a
                 `Bool`.
     */
-    public func boolValueOfSetting(name: String)
+    public func boolValueOfSetting(_ name: String)
         -> Bool?
     {
         guard let int = intValueOfSetting(name) else {
@@ -317,7 +317,7 @@ extension AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as a `Bool`.
     */
-    public func boolValueOfSetting(name: String, withDefault defaultValue: Bool)
+    public func boolValueOfSetting(_ name: String, withDefault defaultValue: Bool)
         -> Bool
     {
         guard let val = boolValueOfSetting(name) else {
@@ -337,7 +337,7 @@ extension AppSettingsReader
                 the setting, or if the value couldn't be interpreted as an
                 `NSNumber`.
     */
-    public func numericValueOfSetting(name: String)
+    public func numericValueOfSetting(_ name: String)
         -> NSNumber?
     {
         guard let val = valueOfSetting(name) else {
@@ -366,7 +366,7 @@ extension AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as an `NSNumber`.
     */
-    public func numericValueOfSetting(name: String, withDefault defaultValue: NSNumber)
+    public func numericValueOfSetting(_ name: String, withDefault defaultValue: NSNumber)
         -> NSNumber
     {
         guard let val = numericValueOfSetting(name) else {
@@ -386,14 +386,14 @@ extension AppSettingsReader
                 the setting, or if the value couldn't be interpreted as an
                 `Int`.
     */
-    public func intValueOfSetting(name: String)
+    public func intValueOfSetting(_ name: String)
         -> Int?
     {
         guard let val = numericValueOfSetting(name) else {
             return nil
         }
 
-        return val.integerValue
+        return val.intValue
     }
 
     /**
@@ -409,7 +409,7 @@ extension AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as an `Int`.
     */
-    public func intValueOfSetting(name: String, withDefault defaultValue: Int)
+    public func intValueOfSetting(_ name: String, withDefault defaultValue: Int)
         -> Int
     {
         guard let val = intValueOfSetting(name) else {
@@ -429,7 +429,7 @@ extension AppSettingsReader
                 the setting, or if the value couldn't be interpreted as a
                 `Double`.
     */
-    public func doubleValueOfSetting(name: String)
+    public func doubleValueOfSetting(_ name: String)
         -> Double?
     {
         guard let val = numericValueOfSetting(name) else {
@@ -452,7 +452,7 @@ extension AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as a `Double`.
     */
-    public func doubleValueOfSetting(name: String, withDefault defaultValue: Double)
+    public func doubleValueOfSetting(_ name: String, withDefault defaultValue: Double)
         -> Double
     {
         guard let val = doubleValueOfSetting(name) else {
@@ -472,7 +472,7 @@ extension AppSettingsReader
                 the setting, or if the value couldn't be interpreted as a
                 `String`.
     */
-    public func stringValueOfSetting(name: String)
+    public func stringValueOfSetting(_ name: String)
         -> String?
     {
         guard let val = valueOfSetting(name) else {
@@ -501,7 +501,7 @@ extension AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as a `String`.
     */
-    public func stringValueOfSetting(name: String, withDefault defaultValue: String)
+    public func stringValueOfSetting(_ name: String, withDefault defaultValue: String)
         -> String
     {
         guard let val = stringValueOfSetting(name) else {
@@ -521,7 +521,7 @@ extension AppSettingsReader
                 the setting, or if the value couldn't be interpreted as an
                 `NSArray`.
     */
-    public func arrayValueOfSetting(name: String)
+    public func arrayValueOfSetting(_ name: String)
         -> NSArray?
     {
         guard let val = valueOfSetting(name) as? NSArray else {
@@ -544,7 +544,7 @@ extension AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as an `NSArray`.
     */
-    public func arrayValueOfSetting(name: String, withDefault defaultValue: NSArray)
+    public func arrayValueOfSetting(_ name: String, withDefault defaultValue: NSArray)
         -> NSArray
     {
         guard let val = arrayValueOfSetting(name) else {
@@ -564,7 +564,7 @@ extension AppSettingsReader
                 the setting, or if the value couldn't be interpreted as an
                 `NSDictionary`.
     */
-    public func dictionaryValueOfSetting(name: String)
+    public func dictionaryValueOfSetting(_ name: String)
         -> NSDictionary?
     {
         guard let val = valueOfSetting(name) as? NSDictionary else {
@@ -587,7 +587,7 @@ extension AppSettingsReader
                 currently no value for the specified setting that can be
                 interpreted as an `NSDictionary`.
     */
-    public func dictionaryValueOfSetting(name: String, withDefault defaultValue: NSDictionary)
+    public func dictionaryValueOfSetting(_ name: String, withDefault defaultValue: NSDictionary)
         -> NSDictionary
     {
         guard let val = dictionaryValueOfSetting(name) else {

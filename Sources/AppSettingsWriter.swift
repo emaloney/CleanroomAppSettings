@@ -24,7 +24,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    func setValue(value: AnyObject, forSetting settingName: String)
+    func setValue(_ value: AnyObject, forSetting settingName: String)
 
     /**
     Changes the value of the given setting to the specified boolean.
@@ -33,7 +33,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    func setBool(value: Bool, forSetting settingName: String)
+    func setBool(_ value: Bool, forSetting settingName: String)
 
     /**
     Changes the value of the given setting to the specified integer.
@@ -42,7 +42,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    func setInt(value: Int, forSetting settingName: String)
+    func setInt(_ value: Int, forSetting settingName: String)
 
     /**
     Changes the value of the given setting to the specified `Double`.
@@ -51,7 +51,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    func setDouble(value: Double, forSetting settingName: String)
+    func setDouble(_ value: Double, forSetting settingName: String)
 
     /**
     Changes the value of the given setting to the specified string.
@@ -60,7 +60,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    func setString(value: String, forSetting settingName: String)
+    func setString(_ value: String, forSetting settingName: String)
 
     /**
     Changes the value of the given setting to the specified array.
@@ -69,7 +69,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    func setArray(value: [AnyObject], forSetting settingName: String)
+    func setArray(_ value: [AnyObject], forSetting settingName: String)
 
     /**
     Changes the value of the given setting to the specified dictionary.
@@ -78,14 +78,14 @@ public protocol AppSettingsWriter: AppSettingsReader
     
     :param: settingName The name of the setting whose value is to be changed
     */
-    func setDictionary(value: [NSObject : AnyObject], forSetting settingName: String)
+    func setDictionary(_ value: [NSObject : AnyObject], forSetting settingName: String)
 
     /**
     Removes the existing value (if any) for the setting with the given name.
 
     :param:     name The name of the setting whose value is to be removed.
     */
-    func removeSetting(name: String)
+    func removeSetting(_ name: String)
 }
 
 extension AppSettingsWriter
@@ -97,9 +97,9 @@ extension AppSettingsWriter
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    public func setBool(value: Bool, forSetting settingName: String)
+    public func setBool(_ value: Bool, forSetting settingName: String)
     {
-        setValue(NSNumber(bool: value), forSetting: settingName)
+        setValue(NSNumber(value: value), forSetting: settingName)
     }
 
     /**
@@ -109,9 +109,9 @@ extension AppSettingsWriter
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    public func setInt(value: Int, forSetting settingName: String)
+    public func setInt(_ value: Int, forSetting settingName: String)
     {
-        setValue(NSNumber(long: value), forSetting: settingName)
+        setValue(NSNumber(value: value), forSetting: settingName)
     }
 
     /**
@@ -121,9 +121,9 @@ extension AppSettingsWriter
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    public func setDouble(value: Double, forSetting settingName: String)
+    public func setDouble(_ value: Double, forSetting settingName: String)
     {
-        setValue(NSNumber(double: value), forSetting: settingName)
+        setValue(NSNumber(value: value), forSetting: settingName)
     }
 
     /**
@@ -133,7 +133,7 @@ extension AppSettingsWriter
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    public func setString(value: String, forSetting settingName: String)
+    public func setString(_ value: String, forSetting settingName: String)
     {
         setValue(value as NSString, forSetting: settingName)
     }
@@ -145,7 +145,7 @@ extension AppSettingsWriter
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    public func setArray(value: [AnyObject], forSetting settingName: String)
+    public func setArray(_ value: [AnyObject], forSetting settingName: String)
     {
         setValue(value as NSArray, forSetting: settingName)
     }
@@ -157,7 +157,7 @@ extension AppSettingsWriter
 
     :param: settingName The name of the setting whose value is to be changed
     */
-    public func setDictionary(value: [NSObject : AnyObject], forSetting settingName: String)
+    public func setDictionary(_ value: [NSObject : AnyObject], forSetting settingName: String)
     {
         setValue(value as NSDictionary, forSetting: settingName)
     }

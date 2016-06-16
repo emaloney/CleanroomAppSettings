@@ -12,7 +12,7 @@ import CleanroomAppSettings
 
 class AppSettingsTests: XCTestCase
 {
-    func setupWriter(writer: AppSettingsWriter)
+    func setupWriter(_ writer: AppSettingsWriter)
     {
         // for general testing
         writer.setValue("foo:bar", forSetting: "foobar")
@@ -35,7 +35,7 @@ class AppSettingsTests: XCTestCase
         writer.setValue("1", forSetting: "boolTrue")
     }
 
-    func testRemoveValue(writer: AppSettingsWriter, usingReader reader: AppSettingsReader)
+    func testRemoveValue(_ writer: AppSettingsWriter, usingReader reader: AppSettingsReader)
     {
         // test removing a value
         writer.setBool(true, forSetting: "notRemoved")
@@ -44,13 +44,13 @@ class AppSettingsTests: XCTestCase
         XCTAssertNil(reader.valueOfSetting("notRemoved"))
     }
 
-    func testRemoveValue(writer: AppSettingsWriter)
+    func testRemoveValue(_ writer: AppSettingsWriter)
     {
         // test reading directly from the writer
         testRemoveValue(writer, usingReader: writer)
     }
 
-    func testReading(reader: AppSettingsReader)
+    func testReading(_ reader: AppSettingsReader)
     {
         // make sure values exist
         XCTAssertNotNil(reader.valueOfSetting("foobar"))
@@ -142,11 +142,11 @@ class AppSettingsTests: XCTestCase
 
         // test removing a value (alternate verification)
         writer.setBool(true, forSetting: "notRemoved2")
-        XCTAssertNotNil(writer.objectForKey("notRemoved2"))
-        dump(writer.objectForKey("notRemoved2"))
+        XCTAssertNotNil(writer.object(forKey: "notRemoved2"))
+        dump(writer.object(forKey: "notRemoved2"))
         writer.removeSetting("notRemoved2")
-        dump(writer.objectForKey("notRemoved2"))
-        XCTAssert(writer.objectForKey("notRemoved2") == nil)
+        dump(writer.object(forKey: "notRemoved2"))
+        XCTAssert(writer.object(forKey: "notRemoved2") == nil)
     }
 
     func testNSUserDefaultsImplementation()

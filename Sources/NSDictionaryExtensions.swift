@@ -30,10 +30,10 @@ extension NSDictionary: AppSettingsReader
 
     :returns:   The value, or `nil` if no value exists.
     */
-    public func valueOfSetting(name: String)
+    public func valueOfSetting(_ name: String)
         -> AnyObject?
     {
-        return objectForKey(name)
+        return object(forKey: name)
     }
 }
 
@@ -51,7 +51,7 @@ extension NSMutableDictionary: AppSettingsWriter
 
     :param:     newValue The new value for the setting with the given name.
     */
-    public func setValue(value: AnyObject, forSetting settingName: String)
+    public func setValue(_ value: AnyObject, forSetting settingName: String)
     {
         setObject(value, forKey: settingName)
     }
@@ -61,8 +61,8 @@ extension NSMutableDictionary: AppSettingsWriter
 
     :param:     name The name of the setting whose value is to be removed.
     */
-    public func removeSetting(name: String)
+    public func removeSetting(_ name: String)
     {
-        removeObjectForKey(name)
+        removeObject(forKey: name)
     }
 }
