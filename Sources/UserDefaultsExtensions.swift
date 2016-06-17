@@ -1,5 +1,5 @@
 //
-//  NSDictionaryExtensions.swift
+//  UserDefaultsExtensions.swift
 //  CleanroomAppSettings
 //
 //  Created by Evan Maloney on 6/23/15.
@@ -9,22 +9,22 @@
 import Foundation
 
 /**
- Extends the `NSDictionary` class to make it usable as an `AppSettingsReader`.
+ Extends the `UserDefaults` class to make it usable as an `AppSettingsReader`.
  */
-extension NSDictionary: AppSettingsReader
+extension UserDefaults: AppSettingsReader
 {
     /**
-     Returns the names of the `NSDictionary` keys for which values currently
+     Returns the names of the `UserDefaults` keys for which values currently
      exist. Keys that are not strings are ignored.
 
      - returns: The application settings names.
      */
     public var settingNames: [String] {
-        return allKeys.filter{ $0 is String }.map{ $0 as! String }
+        return Array(dictionaryRepresentation().keys)
     }
 
     /**
-     Returns the value associated with the given `NSDictionary` key.
+     Returns the value associated with the given `UserDefaults` key.
 
      - parameter name: The name of the setting whose value is to be retrieved.
 
@@ -38,10 +38,9 @@ extension NSDictionary: AppSettingsReader
 }
 
 /**
- Extends the `NSMutableDictionary` class to make it usable as an
- `AppSettingsWriter`.
+ Extends the `UserDefaults` class to make it usable as an `AppSettingsWriter`.
  */
-extension NSMutableDictionary: AppSettingsWriter
+extension UserDefaults: AppSettingsWriter
 {
     /**
      Changes the value of the given setting to the specified object.
@@ -52,7 +51,7 @@ extension NSMutableDictionary: AppSettingsWriter
      */
     public func set(object value: AnyObject, named name: String)
     {
-        setObject(value, forKey: name)
+        set(value, forKey: name)
     }
 
     /**

@@ -9,157 +9,157 @@
 import Foundation
 
 /**
-This protocol extends `AppSettingsReader` by adding the ability
-to store and remove values.
+ This protocol extends `AppSettingsReader` by adding the ability
+ to store and remove values.
 
-This framework also extends `NSUserDefaults`, allowing it to be used as an
-`AppSettingsWriter`.
-*/
+ This framework also extends `UserDefaults`, allowing it to be used as an
+ `AppSettingsWriter`.
+ */
 public protocol AppSettingsWriter: AppSettingsReader
 {
     /**
-    Changes the value of the given setting to the specified object.
+     Changes the value of the given setting to the specified object.
 
-    :param: value The new value for the setting
+     - parameter value: The new value for the setting.
 
-    :param: settingName The name of the setting whose value is to be changed
-    */
-    func setValue(_ value: AnyObject, forSetting settingName: String)
-
-    /**
-    Changes the value of the given setting to the specified boolean.
-
-    :param: value The new value for the setting
-
-    :param: settingName The name of the setting whose value is to be changed
-    */
-    func setBool(_ value: Bool, forSetting settingName: String)
+     - parameter name: The name of the setting whose value is to be changed.
+     */
+    func set(object value: AnyObject, named name: String)
 
     /**
-    Changes the value of the given setting to the specified integer.
+     Changes the value of the given setting to the specified boolean.
 
-    :param: value The new value for the setting
+     - parameter value: The new value for the setting.
 
-    :param: settingName The name of the setting whose value is to be changed
-    */
-    func setInt(_ value: Int, forSetting settingName: String)
-
-    /**
-    Changes the value of the given setting to the specified `Double`.
-
-    :param: value The new value for the setting
-
-    :param: settingName The name of the setting whose value is to be changed
-    */
-    func setDouble(_ value: Double, forSetting settingName: String)
+     - parameter name: The name of the setting whose value is to be changed.
+     */
+    func set(bool value: Bool, named name: String)
 
     /**
-    Changes the value of the given setting to the specified string.
+     Changes the value of the given setting to the specified integer.
 
-    :param: value The new value for the setting
+     - parameter value: The new value for the setting.
 
-    :param: settingName The name of the setting whose value is to be changed
-    */
-    func setString(_ value: String, forSetting settingName: String)
-
-    /**
-    Changes the value of the given setting to the specified array.
-
-    :param: value The new value for the setting
-
-    :param: settingName The name of the setting whose value is to be changed
-    */
-    func setArray(_ value: [AnyObject], forSetting settingName: String)
+     - parameter name: The name of the setting whose value is to be changed.
+     */
+    func set(int value: Int, named name: String)
 
     /**
-    Changes the value of the given setting to the specified dictionary.
+     Changes the value of the given setting to the specified `Double`.
 
-    :param: value The new value for the setting
-    
-    :param: settingName The name of the setting whose value is to be changed
-    */
-    func setDictionary(_ value: [NSObject : AnyObject], forSetting settingName: String)
+     - parameter value: The new value for the setting.
+
+     - parameter name: The name of the setting whose value is to be changed.
+     */
+    func set(double value: Double, named name: String)
 
     /**
-    Removes the existing value (if any) for the setting with the given name.
+     Changes the value of the given setting to the specified string.
 
-    :param:     name The name of the setting whose value is to be removed.
-    */
-    func removeSetting(_ name: String)
+     - parameter value: The new value for the setting.
+
+     - parameter name: The name of the setting whose value is to be changed.
+     */
+    func set(string value: String, named name: String)
+
+    /**
+     Changes the value of the given setting to the specified array.
+
+     - parameter value: The new value for the setting.
+
+     - parameter name: The name of the setting whose value is to be changed.
+     */
+    func set(array value: [AnyObject], named name: String)
+
+    /**
+     Changes the value of the given setting to the specified dictionary.
+
+     - parameter value: The new value for the setting.
+
+     - parameter name: The name of the setting whose value is to be changed.
+     */
+    func set(dictionary value: [NSObject: AnyObject], named name: String)
+
+    /**
+     Removes the existing value (if any) for the setting with the given name.
+
+     - parameter name: The name of the setting whose value is to be removed.
+     */
+    func removeSetting(named: String)
 }
 
 extension AppSettingsWriter
 {
     /**
-    Changes the value of the given setting to the specified boolean.
+     Changes the value of the given setting to the specified boolean.
 
-    :param: value The new value for the setting
+     - parameter value: The new value for the setting.
 
-    :param: settingName The name of the setting whose value is to be changed
-    */
-    public func setBool(_ value: Bool, forSetting settingName: String)
+     - parameter name: The name of the setting whose value is to be changed.
+     */
+    public func set(bool value: Bool, named name: String)
     {
-        setValue(NSNumber(value: value), forSetting: settingName)
+        set(object: NSNumber(value: value), named: name)
     }
 
     /**
-    Changes the value of the given setting to the specified integer.
+     Changes the value of the given setting to the specified integer.
 
-    :param: value The new value for the setting
+     - parameter value: The new value for the setting.
 
-    :param: settingName The name of the setting whose value is to be changed
-    */
-    public func setInt(_ value: Int, forSetting settingName: String)
+     - parameter name: The name of the setting whose value is to be changed.
+     */
+    public func set(int value: Int, named name: String)
     {
-        setValue(NSNumber(value: value), forSetting: settingName)
+        set(object: NSNumber(value: value), named: name)
     }
 
     /**
-    Changes the value of the given setting to the specified `Double`.
+     Changes the value of the given setting to the specified `Double`.
 
-    :param: value The new value for the setting
+     - parameter value: The new value for the setting.
 
-    :param: settingName The name of the setting whose value is to be changed
-    */
-    public func setDouble(_ value: Double, forSetting settingName: String)
+     - parameter name: The name of the setting whose value is to be changed.
+     */
+    public func set(double value: Double, named name: String)
     {
-        setValue(NSNumber(value: value), forSetting: settingName)
+        set(object: NSNumber(value: value), named: name)
     }
 
     /**
-    Changes the value of the given setting to the specified string.
+     Changes the value of the given setting to the specified string.
 
-    :param: value The new value for the setting
+     - parameter value: The new value for the setting.
 
-    :param: settingName The name of the setting whose value is to be changed
-    */
-    public func setString(_ value: String, forSetting settingName: String)
+     - parameter name: The name of the setting whose value is to be changed.
+     */
+    public func set(string value: String, named name: String)
     {
-        setValue(value as NSString, forSetting: settingName)
+        set(object: value as NSString, named: name)
     }
 
     /**
-    Changes the value of the given setting to the specified array.
+     Changes the value of the given setting to the specified array.
 
-    :param: value The new value for the setting
+     - parameter value: The new value for the setting.
 
-    :param: settingName The name of the setting whose value is to be changed
-    */
-    public func setArray(_ value: [AnyObject], forSetting settingName: String)
+     - parameter name: The name of the setting whose value is to be changed.
+     */
+    public func set(array value: [AnyObject], named name: String)
     {
-        setValue(value as NSArray, forSetting: settingName)
+        set(object: value as NSArray, named: name)
     }
 
     /**
-    Changes the value of the given setting to the specified dictionary.
+     Changes the value of the given setting to the specified dictionary.
 
-    :param: value The new value for the setting
+     - parameter value: The new value for the setting.
 
-    :param: settingName The name of the setting whose value is to be changed
-    */
-    public func setDictionary(_ value: [NSObject : AnyObject], forSetting settingName: String)
+     - parameter name: The name of the setting whose value is to be changed.
+     */
+    public func set(dictionary value: [NSObject: AnyObject], named name: String)
     {
-        setValue(value as NSDictionary, forSetting: settingName)
+        set(object: value as NSDictionary, named: name)
     }
 }
 

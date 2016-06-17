@@ -22,10 +22,10 @@
 		3B5A83401C3DAF0700BCE18A /* NSDictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83351C3DAF0700BCE18A /* NSDictionaryExtensions.swift */; };
 		3B5A83411C3DAF0700BCE18A /* NSDictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83351C3DAF0700BCE18A /* NSDictionaryExtensions.swift */; };
 		3B5A83421C3DAF0700BCE18A /* NSDictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83351C3DAF0700BCE18A /* NSDictionaryExtensions.swift */; };
-		3B5A83431C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83361C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift */; };
-		3B5A83441C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83361C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift */; };
-		3B5A83451C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83361C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift */; };
-		3B5A83461C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83361C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift */; };
+		3B5A83431C3DAF0700BCE18A /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83361C3DAF0700BCE18A /* UserDefaultsExtensions.swift */; };
+		3B5A83441C3DAF0700BCE18A /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83361C3DAF0700BCE18A /* UserDefaultsExtensions.swift */; };
+		3B5A83451C3DAF0700BCE18A /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83361C3DAF0700BCE18A /* UserDefaultsExtensions.swift */; };
+		3B5A83461C3DAF0700BCE18A /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83361C3DAF0700BCE18A /* UserDefaultsExtensions.swift */; };
 		3B5A83481C3DAF2B00BCE18A /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83471C3DAF2B00BCE18A /* AppSettingsTests.swift */; };
 		3B5A83491C3DAF2B00BCE18A /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83471C3DAF2B00BCE18A /* AppSettingsTests.swift */; };
 		3B5A834A1C3DAF2B00BCE18A /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A83471C3DAF2B00BCE18A /* AppSettingsTests.swift */; };
@@ -87,7 +87,7 @@
 		3B5A83331C3DAF0700BCE18A /* AppSettingsReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsReader.swift; sourceTree = "<group>"; };
 		3B5A83341C3DAF0700BCE18A /* AppSettingsWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsWriter.swift; sourceTree = "<group>"; };
 		3B5A83351C3DAF0700BCE18A /* NSDictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDictionaryExtensions.swift; sourceTree = "<group>"; };
-		3B5A83361C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultsExtensions.swift; sourceTree = "<group>"; };
+		3B5A83361C3DAF0700BCE18A /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		3B5A83471C3DAF2B00BCE18A /* AppSettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsTests.swift; sourceTree = "<group>"; };
 		3B78C6CE1BA7634E00173EAC /* CleanroomAppSettings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanroomAppSettings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -191,7 +191,7 @@
 				3B5A83331C3DAF0700BCE18A /* AppSettingsReader.swift */,
 				3B5A83341C3DAF0700BCE18A /* AppSettingsWriter.swift */,
 				3B5A83351C3DAF0700BCE18A /* NSDictionaryExtensions.swift */,
-				3B5A83361C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift */,
+				3B5A83361C3DAF0700BCE18A /* UserDefaultsExtensions.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5A833F1C3DAF0700BCE18A /* NSDictionaryExtensions.swift in Sources */,
-				3B5A83431C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift in Sources */,
+				3B5A83431C3DAF0700BCE18A /* UserDefaultsExtensions.swift in Sources */,
 				3B5A83371C3DAF0700BCE18A /* AppSettingsReader.swift in Sources */,
 				3B5A833B1C3DAF0700BCE18A /* AppSettingsWriter.swift in Sources */,
 			);
@@ -522,7 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5A83401C3DAF0700BCE18A /* NSDictionaryExtensions.swift in Sources */,
-				3B5A83441C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift in Sources */,
+				3B5A83441C3DAF0700BCE18A /* UserDefaultsExtensions.swift in Sources */,
 				3B5A83381C3DAF0700BCE18A /* AppSettingsReader.swift in Sources */,
 				3B5A833C1C3DAF0700BCE18A /* AppSettingsWriter.swift in Sources */,
 			);
@@ -541,7 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5A83411C3DAF0700BCE18A /* NSDictionaryExtensions.swift in Sources */,
-				3B5A83451C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift in Sources */,
+				3B5A83451C3DAF0700BCE18A /* UserDefaultsExtensions.swift in Sources */,
 				3B5A83391C3DAF0700BCE18A /* AppSettingsReader.swift in Sources */,
 				3B5A833D1C3DAF0700BCE18A /* AppSettingsWriter.swift in Sources */,
 			);
@@ -560,7 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5A83421C3DAF0700BCE18A /* NSDictionaryExtensions.swift in Sources */,
-				3B5A83461C3DAF0700BCE18A /* NSUserDefaultsExtensions.swift in Sources */,
+				3B5A83461C3DAF0700BCE18A /* UserDefaultsExtensions.swift in Sources */,
 				3B5A833A1C3DAF0700BCE18A /* AppSettingsReader.swift in Sources */,
 				3B5A833E1C3DAF0700BCE18A /* AppSettingsWriter.swift in Sources */,
 			);
