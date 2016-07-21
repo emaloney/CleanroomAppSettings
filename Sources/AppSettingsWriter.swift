@@ -85,7 +85,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
      - parameter name: The name of the setting whose value is to be removed.
      */
-    func removeSetting(named: String)
+    func removeSetting(named name: String)
 }
 
 extension AppSettingsWriter
