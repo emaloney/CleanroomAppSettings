@@ -21,9 +21,9 @@ The [`master`](https://github.com/emaloney/CleanroomAppSettings) branch of this 
 
 Branch|Build status
 --------|------------------------
-`[master](https://github.com/emaloney/CleanroomAppSettings)`|[![Build status: master branch](https://travis-ci.org/emaloney/CleanroomAppSettings.svg?branch=master)](https://travis-ci.org/emaloney/CleanroomAppSettings)
-`[swift2.3](https://github.com/emaloney/CleanroomAppSettings/tree/swift2.3)`|[![Build status: swift2.3 branch](https://travis-ci.org/emaloney/CleanroomAppSettings.svg?branch=swift2.3)](https://travis-ci.org/emaloney/CleanroomAppSettings)
-`[swift3](https://github.com/emaloney/CleanroomAppSettings/tree/swift3)`|[![Build status: swift3 branch](https://travis-ci.org/emaloney/CleanroomAppSettings.svg?branch=swift3)](https://travis-ci.org/emaloney/CleanroomAppSettings)
+[`master`](https://github.com/emaloney/CleanroomAppSettings)|[![Build status: master branch](https://travis-ci.org/emaloney/CleanroomAppSettings.svg?branch=master)](https://travis-ci.org/emaloney/CleanroomAppSettings)
+[`swift2.3`](https://github.com/emaloney/CleanroomAppSettings/tree/swift2.3)|[![Build status: swift2.3 branch](https://travis-ci.org/emaloney/CleanroomAppSettings.svg?branch=swift2.3)](https://travis-ci.org/emaloney/CleanroomAppSettings)
+[`swift3`](https://github.com/emaloney/CleanroomAppSettings/tree/swift3)|[![Build status: swift3 branch](https://travis-ci.org/emaloney/CleanroomAppSettings.svg?branch=swift3)](https://travis-ci.org/emaloney/CleanroomAppSettings)
 
 
 ### License
