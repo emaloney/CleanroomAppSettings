@@ -1198,8 +1198,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B38DBD81BA76428000986DF /* Project.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 5;
-				DYLIB_CURRENT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
+				DYLIB_CURRENT_VERSION = 6;
 			};
 			name = Debug;
 		};
@@ -1207,8 +1207,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B38DBD81BA76428000986DF /* Project.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 5;
-				DYLIB_CURRENT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
+				DYLIB_CURRENT_VERSION = 6;
 			};
 			name = Release;
 		};
