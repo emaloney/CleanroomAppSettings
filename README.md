@@ -28,7 +28,7 @@ Branch|Build status
 
 ### License
 
-CleanroomAppSettings is distributed under [the MIT license](/blob/master/LICENSE).
+CleanroomAppSettings is distributed under [the MIT license](https://github.com/emaloney/CleanroomAppSettings/blob/master/LICENSE).
 
 CleanroomAppSettings is provided for your use—free-of-charge—on an as-is basis. We make no guarantees, promises or apologies. *Caveat developer.*
 
