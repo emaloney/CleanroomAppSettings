@@ -24,7 +24,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    func set(object value: AnyObject, named name: String)
+    func set(value: Any, named name: String)
 
     /**
      Changes the value of the given setting to the specified boolean.
@@ -69,7 +69,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    func set(array value: [AnyObject], named name: String)
+    func set(array value: [Any], named name: String)
 
     /**
      Changes the value of the given setting to the specified dictionary.
@@ -78,7 +78,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    func set(dictionary value: [NSObject: AnyObject], named name: String)
+    func set(dictionary value: [AnyHashable: Any], named name: String)
 
     /**
      Removes the existing value (if any) for the setting with the given name.
@@ -99,7 +99,7 @@ extension AppSettingsWriter
      */
     public func set(bool value: Bool, named name: String)
     {
-        set(object: NSNumber(value: value), named: name)
+        set(value: NSNumber(value: value), named: name)
     }
 
     /**
@@ -111,7 +111,7 @@ extension AppSettingsWriter
      */
     public func set(int value: Int, named name: String)
     {
-        set(object: NSNumber(value: value), named: name)
+        set(value: NSNumber(value: value), named: name)
     }
 
     /**
@@ -123,7 +123,7 @@ extension AppSettingsWriter
      */
     public func set(double value: Double, named name: String)
     {
-        set(object: NSNumber(value: value), named: name)
+        set(value: NSNumber(value: value), named: name)
     }
 
     /**
@@ -135,7 +135,7 @@ extension AppSettingsWriter
      */
     public func set(string value: String, named name: String)
     {
-        set(object: value as NSString, named: name)
+        set(value: value as NSString, named: name)
     }
 
     /**
@@ -145,9 +145,9 @@ extension AppSettingsWriter
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    public func set(array value: [AnyObject], named name: String)
+    public func set(array value: [Any], named name: String)
     {
-        set(object: value as NSArray, named: name)
+        set(value: value as NSArray, named: name)
     }
 
     /**
@@ -157,9 +157,9 @@ extension AppSettingsWriter
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    public func set(dictionary value: [NSObject: AnyObject], named name: String)
+    public func set(dictionary value: [AnyHashable: Any], named name: String)
     {
-        set(object: value as NSDictionary, named: name)
+        set(value: value as NSDictionary, named: name)
     }
 }
 

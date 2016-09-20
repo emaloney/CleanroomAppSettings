@@ -15,7 +15,7 @@ class AppSettingsTests: XCTestCase
     func setupWriter(_ writer: AppSettingsWriter)
     {
         // for general testing
-        writer.set(object: "foo:bar", named: "foobar")
+        writer.set(value: "foo:bar", named: "foobar")
         writer.set(bool: true, named: "trueValue")
         writer.set(bool: false, named: "falseValue")
         writer.set(int: 0, named: "zeroInt")
@@ -30,18 +30,18 @@ class AppSettingsTests: XCTestCase
 
         // for testing of simple type conversion
         writer.set(string: "26.2", named: "marathon")
-        writer.set(object: "27", named: "twentySeven")
+        writer.set(value: "27", named: "twentySeven")
         writer.set(string: "0", named: "boolFalse")
-        writer.set(object: "1", named: "boolTrue")
+        writer.set(value: "1", named: "boolTrue")
     }
 
     func testRemoveValue(_ writer: AppSettingsWriter, usingReader reader: AppSettingsReader)
     {
         // test removing a value
         writer.set(bool: true, named: "notRemoved")
-        XCTAssertNotNil(reader.object(named: "notRemoved"))
+        XCTAssertNotNil(reader.value(named: "notRemoved"))
         writer.removeSetting(named: "notRemoved")
-        XCTAssertNil(reader.object(named: "notRemoved"))
+        XCTAssertNil(reader.value(named: "notRemoved"))
     }
 
     func testRemoveValue(_ writer: AppSettingsWriter)
@@ -53,7 +53,7 @@ class AppSettingsTests: XCTestCase
     func testReading(_ reader: AppSettingsReader)
     {
         // make sure values exist
-        XCTAssertNotNil(reader.object(named: "foobar"))
+        XCTAssertNotNil(reader.value(named: "foobar"))
         XCTAssertNotNil(reader.bool(named: "trueValue"))
         XCTAssertNotNil(reader.bool(named: "falseValue"))
         XCTAssertNotNil(reader.int(named: "zeroInt"))
@@ -67,7 +67,7 @@ class AppSettingsTests: XCTestCase
         XCTAssertNotNil(reader.dictionary(named: "threeOrdinals"))
 
         // test values
-        XCTAssertEqual(reader.object(named: "foobar") as? String, "foo:bar")
+        XCTAssertEqual(reader.value(named: "foobar") as? String, "foo:bar")
         XCTAssertEqual(reader.bool(named: "trueValue")!, true)
         XCTAssertEqual(reader.bool(named: "falseValue")!, false)
         XCTAssertEqual(reader.int(named: "zeroInt")!, 0)
@@ -81,7 +81,7 @@ class AppSettingsTests: XCTestCase
         XCTAssertEqual(reader.dictionary(named: "threeOrdinals")!, ["1": "one", "2": "two", "3": "three"])
 
         // test expected nil returns for nonexistent keys
-        XCTAssertNil(reader.object(named: "nonexistent"))
+        XCTAssertNil(reader.value(named: "nonexistent"))
         XCTAssertNil(reader.bool(named: "nonexistent"))
         XCTAssertNil(reader.int(named: "nonexistent"))
         XCTAssertNil(reader.double(named: "nonexistent"))
@@ -90,35 +90,35 @@ class AppSettingsTests: XCTestCase
         XCTAssertNil(reader.dictionary(named: "nonexistent"))
 
         // test default values for nonexistent keys
-        XCTAssertNotNil(reader.object(named: "nonexistent", withDefault: "foo"))
-        XCTAssertEqual(reader.object(named: "nonexistent", withDefault: "foo") as? String, "foo")
-        XCTAssertNotNil(reader.bool(named: "nonexistent", withDefault: true))
-        XCTAssertEqual(reader.bool(named: "nonexistent", withDefault: true), true)
-        XCTAssertNotNil(reader.int(named: "nonexistent", withDefault: 42))
-        XCTAssertEqual(reader.int(named: "nonexistent", withDefault: 42), 42)
-        XCTAssertNotNil(reader.double(named: "nonexistent", withDefault: 1027.1972))
-        XCTAssertEqual(reader.double(named: "nonexistent", withDefault: 1027.1972), 1027.1972)
-        XCTAssertNotNil(reader.string(named: "nonexistent", withDefault: "foo/bar"))
-        XCTAssertEqual(reader.string(named: "nonexistent", withDefault: "foo/bar"), "foo/bar")
-        XCTAssertNotNil(reader.array(named: "nonexistent", withDefault: [1, 3, 5, 7, 9]))
-        XCTAssertEqual(reader.array(named: "nonexistent", withDefault: [1, 3, 5, 7, 9]), [1, 3, 5, 7, 9])
+        XCTAssertNotNil(reader.value(named: "nonexistent", default: "foo"))
+        XCTAssertEqual(reader.value(named: "nonexistent", default: "foo") as? String, "foo")
+        XCTAssertNotNil(reader.bool(named: "nonexistent", default: true))
+        XCTAssertEqual(reader.bool(named: "nonexistent", default: true), true)
+        XCTAssertNotNil(reader.int(named: "nonexistent", default: 42))
+        XCTAssertEqual(reader.int(named: "nonexistent", default: 42), 42)
+        XCTAssertNotNil(reader.double(named: "nonexistent", default: 1027.1972))
+        XCTAssertEqual(reader.double(named: "nonexistent", default: 1027.1972), 1027.1972)
+        XCTAssertNotNil(reader.string(named: "nonexistent", default: "foo/bar"))
+        XCTAssertEqual(reader.string(named: "nonexistent", default: "foo/bar"), "foo/bar")
+        XCTAssertNotNil(reader.array(named: "nonexistent", default: [1, 3, 5, 7, 9]))
+        XCTAssertEqual(reader.array(named: "nonexistent", default: [1, 3, 5, 7, 9]), [1, 3, 5, 7, 9])
 
-        XCTAssertNotNil(reader.dictionary(named: "nonexistent", withDefault: ["one": 2, "free": "four"]))
-        XCTAssertEqual(reader.dictionary(named: "nonexistent", withDefault: ["one": 2, "free": "four"]), ["one": 2, "free": "four"])
+        XCTAssertNotNil(reader.dictionary(named: "nonexistent", default: ["one": 2, "free": "four"]))
+        XCTAssertEqual(reader.dictionary(named: "nonexistent", default: ["one": 2, "free": "four"]), ["one": 2, "free": "four"])
 
         // test default values for existing keys
-        XCTAssertNotEqual(reader.object(named: "foobar", withDefault: "boo:far") as? String, "boo:far")
-        XCTAssertNotEqual(reader.bool(named: "trueValue", withDefault: false), false)
-        XCTAssertNotEqual(reader.bool(named: "falseValue", withDefault: true), true)
-        XCTAssertNotEqual(reader.int(named: "zeroInt", withDefault: 1), 1)
-        XCTAssertNotEqual(reader.int(named: "year", withDefault: 2014), 2014)
-        XCTAssertNotEqual(reader.double(named: "acceleration", withDefault: 10.0), 10.0)
-        XCTAssertNotEqual(reader.double(named: "zeroDouble", withDefault: 22.6), 22.6)
-        XCTAssertNotEqual(reader.string(named: "this is my string", withDefault: "nothing"), "nothing")
-        XCTAssertNotEqual(reader.array(named: "emptyArray", withDefault: [1]), [1])
-        XCTAssertNotEqual(reader.array(named: "evenArray", withDefault: [2, 4, 6, 8]), [2, 4, 6, 8])
-        XCTAssertNotEqual(reader.dictionary(named: "emptyDict", withDefault: ["a": "b"]), ["a": "b"])
-        XCTAssertNotEqual(reader.dictionary(named: "threeOrdinals", withDefault: [4: "four"]), [4: "four"])
+        XCTAssertNotEqual(reader.value(named: "foobar", default: "boo:far") as? String, "boo:far")
+        XCTAssertNotEqual(reader.bool(named: "trueValue", default: false), false)
+        XCTAssertNotEqual(reader.bool(named: "falseValue", default: true), true)
+        XCTAssertNotEqual(reader.int(named: "zeroInt", default: 1), 1)
+        XCTAssertNotEqual(reader.int(named: "year", default: 2014), 2014)
+        XCTAssertNotEqual(reader.double(named: "acceleration", default: 10.0), 10.0)
+        XCTAssertNotEqual(reader.double(named: "zeroDouble", default: 22.6), 22.6)
+        XCTAssertNotEqual(reader.string(named: "this is my string", default: "nothing"), "nothing")
+        XCTAssertNotEqual(reader.array(named: "emptyArray", default: [1]), [1])
+        XCTAssertNotEqual(reader.array(named: "evenArray", default: [2, 4, 6, 8]), [2, 4, 6, 8])
+        XCTAssertNotEqual(reader.dictionary(named: "emptyDict", default: ["a": "b"]), ["a": "b"])
+        XCTAssertNotEqual(reader.dictionary(named: "threeOrdinals", default: [4: "four"]), [4: "four"])
 
         // test simple type conversion
         XCTAssertEqual(reader.double(named: "marathon")!, 26.2)

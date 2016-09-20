@@ -30,8 +30,8 @@ extension NSDictionary: AppSettingsReader
 
      - returns: The value of the setting, or `nil` if no such setting exists.
      */
-    public func object(named name: String)
-        -> AnyObject?
+    public func value(named name: String)
+        -> Any?
     {
         return object(forKey: name)
     }
@@ -50,9 +50,9 @@ extension NSMutableDictionary: AppSettingsWriter
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    public func set(object value: AnyObject, named name: String)
+    public func set(value: Any, named name: String)
     {
-        setObject(value, forKey: name)
+        self[name] = value
     }
 
     /**

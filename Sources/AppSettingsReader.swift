@@ -40,7 +40,7 @@ public protocol AppSettingsReader
 
      - returns: The value of the setting, or `nil` if no such setting exists.
      */
-    func object(named name: String) -> AnyObject?
+    func value(named name: String) -> Any?
 
     /**
      Returns the value of the setting with the specified name.
@@ -53,7 +53,7 @@ public protocol AppSettingsReader
      - returns: The value of the setting, or `defaultValue` if there is
      currently no value for the specified setting.
      */
-    func object(named name: String, withDefault defaultValue: AnyObject) -> AnyObject
+    func value(named name: String, default defaultValue: Any) -> Any
 
     /**
      Returns the value of the setting with the specified name, interpreted as a
@@ -79,7 +79,7 @@ public protocol AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      a `Bool`.
      */
-    func bool(named name: String, withDefault defaultValue: Bool) -> Bool
+    func bool(named name: String, default defaultValue: Bool) -> Bool
 
     /**
      Returns the value of the setting with the specified name, interpreted as a
@@ -105,7 +105,7 @@ public protocol AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      an `NSNumber`.
      */
-    func number(named name: String, withDefault defaultValue: NSNumber) -> NSNumber
+    func number(named name: String, default defaultValue: NSNumber) -> NSNumber
 
     /**
      Returns the value of the setting with the specified name, interpreted as
@@ -131,7 +131,7 @@ public protocol AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      an `Int`.
      */
-    func int(named name: String, withDefault defaultValue: Int) -> Int
+    func int(named name: String, default defaultValue: Int) -> Int
 
     /**
      Returns the value of the setting with the specified name, interpreted as a
@@ -157,7 +157,7 @@ public protocol AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      a `Double`.
      */
-    func double(named name: String, withDefault defaultValue: Double) -> Double
+    func double(named name: String, default defaultValue: Double) -> Double
 
     /**
      Returns the value of the setting with the specified name, interpreted as a
@@ -183,7 +183,7 @@ public protocol AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      a `String`.
      */
-    func string(named name: String, withDefault defaultValue: String) -> String
+    func string(named name: String, default defaultValue: String) -> String
 
     /**
      Returns the value of the setting with the specified name, interpreted as an
@@ -209,7 +209,7 @@ public protocol AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      an `NSArray`.
      */
-    func array(named name: String, withDefault defaultValue: NSArray) -> NSArray
+    func array(named name: String, default defaultValue: NSArray) -> NSArray
 
     /**
      Returns the value of the setting with the specified name, interpreted as a
@@ -236,7 +236,7 @@ public protocol AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      an `NSDictionary`.
      */
-    func dictionary(named name: String, withDefault defaultValue: NSDictionary) -> NSDictionary
+    func dictionary(named name: String, default defaultValue: NSDictionary) -> NSDictionary
 }
 
 public extension AppSettingsReader
@@ -252,10 +252,10 @@ public extension AppSettingsReader
      - returns: The value of the setting, or `defaultValue` if there is
      currently no value for the specified setting.
      */
-    public func object(named name: String, withDefault defaultValue: AnyObject)
-        -> AnyObject
+    public func value(named name: String, default defaultValue: Any)
+        -> Any
     {
-        return object(named: name) ?? defaultValue
+        return value(named: name) ?? defaultValue
     }
 
     /**
@@ -290,7 +290,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      a `Bool`.
      */
-    public func bool(named name: String, withDefault defaultValue: Bool)
+    public func bool(named name: String, default defaultValue: Bool)
         -> Bool
     {
         return bool(named: name) ?? defaultValue
@@ -308,7 +308,7 @@ public extension AppSettingsReader
     public func number(named name: String)
         -> NSNumber?
     {
-        guard let val = object(named: name) else {
+        guard let val = value(named: name) else {
             return nil
         }
 
@@ -334,7 +334,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      an `NSNumber`.
      */
-    public func number(named name: String, withDefault defaultValue: NSNumber)
+    public func number(named name: String, default defaultValue: NSNumber)
         -> NSNumber
     {
         return number(named: name) ?? defaultValue
@@ -368,7 +368,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      an `Int`.
      */
-    public func int(named name: String, withDefault defaultValue: Int)
+    public func int(named name: String, default defaultValue: Int)
         -> Int
     {
         return int(named: name) ?? defaultValue
@@ -402,7 +402,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as 
      a `Double`.
      */
-    public func double(named name: String, withDefault defaultValue: Double)
+    public func double(named name: String, default defaultValue: Double)
         -> Double
     {
         return double(named: name) ?? defaultValue
@@ -420,7 +420,7 @@ public extension AppSettingsReader
     public func string(named name: String)
         -> String?
     {
-        guard let val = object(named: name) else {
+        guard let val = value(named: name) else {
             return nil
         }
 
@@ -446,7 +446,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      a `String`.
      */
-    public func string(named name: String, withDefault defaultValue: String)
+    public func string(named name: String, default defaultValue: String)
         -> String
     {
         return string(named: name) ?? defaultValue
@@ -464,7 +464,7 @@ public extension AppSettingsReader
     public func array(named name: String)
         -> NSArray?
     {
-        return object(named: name) as? NSArray
+        return value(named: name) as? NSArray
     }
 
     /**
@@ -480,7 +480,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      an `NSArray`.
      */
-    public func array(named name: String, withDefault defaultValue: NSArray)
+    public func array(named name: String, default defaultValue: NSArray)
         -> NSArray
     {
         return array(named: name) ?? defaultValue
@@ -499,7 +499,7 @@ public extension AppSettingsReader
     public func dictionary(named name: String)
         -> NSDictionary?
     {
-        return object(named: name) as? NSDictionary
+        return value(named: name) as? NSDictionary
     }
 
     /**
@@ -515,7 +515,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      an `NSDictionary`.
      */
-    public func dictionary(named name: String, withDefault defaultValue: NSDictionary)
+    public func dictionary(named name: String, default defaultValue: NSDictionary)
         -> NSDictionary
     {
         return dictionary(named: name) ?? defaultValue
