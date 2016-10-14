@@ -38,7 +38,7 @@
                 <a href="../Extensions/NSMutableDictionary.html">NSMutableDictionary</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Extensions/NSUserDefaults.html">NSUserDefaults</a>
+                <a href="../Extensions/UserDefaults.html">UserDefaults</a>
               </li>
             </ul>
           </li>
@@ -76,7 +76,7 @@ available locally on the device running the application.</p>
 and may be transparently synchronized across multiple devices depending on the
 underlying implementation.</p>
 
-<p>This framework also extends <code>NSUserDefaults</code>, allowing it to be used as an
+<p>This framework also extends <code>UserDefaults</code>, allowing it to be used as an
 <code>AppSettingsReader</code>.</p>
 
           </section>
@@ -99,8 +99,6 @@ underlying implementation.</p>
                         <p>Returns the names of the application settings for which values currently
 exist.</p>
 
-<p>:returns:   The application settings names.</p>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -110,15 +108,20 @@ exist.</p>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The application settings names.</p>
+
+                      </div>
                     </section>
                   </div>
                 </li>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader14valueOfSettingFSSGSqPs9AnyObject__"></a>
-                    <a name="//apple_ref/swift/Method/valueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader14valueOfSettingFSSGSqPs9AnyObject__">valueOfSetting(_:)</a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader5valueFT5namedSS_GSqP__"></a>
+                    <a name="//apple_ref/swift/Method/value(named:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader5valueFT5namedSS_GSqP__">value(named:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -128,18 +131,39 @@ exist.</p>
                       <div class="abstract">
                         <p>Returns the value of the setting with the specified name.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:returns:   The value of the setting, or <code>nil</code> if no such setting exists.</p>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">valueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">value</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Any</span><span class="p">?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting, or <code>nil</code> if no such setting exists.</p>
+
                       </div>
                     </section>
                   </div>
@@ -147,9 +171,9 @@ exist.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader14valueOfSettingFTSS11withDefaultPs9AnyObject__PS1__"></a>
-                    <a name="//apple_ref/swift/Method/valueOfSetting(_:withDefault:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader14valueOfSettingFTSS11withDefaultPs9AnyObject__PS1__">valueOfSetting(_:withDefault:)</a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader5valueFT5namedSS7defaultP__P_"></a>
+                    <a name="//apple_ref/swift/Method/value(named:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader5valueFT5namedSS7defaultP__P_">value(named:default:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -162,35 +186,57 @@ exist.</p>
                       <div class="abstract">
                         <p>Returns the value of the setting with the specified name.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting.</p>
-
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
                         <p>Returns the value of the setting with the specified name.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting.</p>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">valueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">value</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">default</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Any</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>defaultValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A default value to use in case there is no existing value for the given setting.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting, or <code>defaultValue</code> if there is currently no value for the specified setting.</p>
+
                       </div>
                     </section>
                   </div>
@@ -198,9 +244,9 @@ exist.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader18boolValueOfSettingFSSGSqSb_"></a>
-                    <a name="//apple_ref/swift/Method/boolValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader18boolValueOfSettingFSSGSqSb_">boolValueOfSetting(_:)</a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader4boolFT5namedSS_GSqSb_"></a>
+                    <a name="//apple_ref/swift/Method/bool(named:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader4boolFT5namedSS_GSqSb_">bool(named:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -214,11 +260,67 @@ exist.</p>
                         <p>Returns the value of the setting with the specified name, interpreted as a
 boolean value.</p>
 
-<p>:param:     name The setting name</p>
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Returns the value of the setting with the specified name, interpreted as a
+boolean value.</p>
 
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as a
-            <code>Bool</code>.</p>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">bool</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting. Will be <code>nil</code> if there is no value for the setting, or if the value couldn’t be interpreted as a <code>Bool</code>.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader4boolFT5namedSS7defaultSb_Sb"></a>
+                    <a name="//apple_ref/swift/Method/bool(named:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader4boolFT5namedSS7defaultSb_Sb">bool(named:default:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the value of the setting with the specified name, interpreted as a
+boolean value.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -226,20 +328,52 @@ boolean value.</p>
                         <p>Returns the value of the setting with the specified name, interpreted as a
 boolean value.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as a
-            <code>Bool</code>.</p>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">boolValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">bool</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">default</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>defaultValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A default value to use in case there is no existing value of the correct type for the given setting.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting, or <code>defaultValue</code> if there is currently no value for the specified setting that can be interpreted as a <code>Bool</code>.</p>
+
                       </div>
                     </section>
                   </div>
@@ -247,64 +381,9 @@ boolean value.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader18boolValueOfSettingFTSS11withDefaultSb_Sb"></a>
-                    <a name="//apple_ref/swift/Method/boolValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader18boolValueOfSettingFTSS11withDefaultSb_Sb">boolValueOfSetting(_:withDefault:)</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns the value of the setting with the specified name, interpreted as a
-boolean value.</p>
-
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as a <code>Bool</code>.</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Returns the value of the setting with the specified name, interpreted as a
-boolean value.</p>
-
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as a <code>Bool</code>.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">boolValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader21numericValueOfSettingFSSGSqCSo8NSNumber_"></a>
-                    <a name="//apple_ref/swift/Method/numericValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader21numericValueOfSettingFSSGSqCSo8NSNumber_">numericValueOfSetting(_:)</a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader6numberFT5namedSS_GSqCSo8NSNumber_"></a>
+                    <a name="//apple_ref/swift/Method/number(named:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader6numberFT5namedSS_GSqCSo8NSNumber_">number(named:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -318,11 +397,67 @@ boolean value.</p>
                         <p>Returns the value of the setting with the specified name, interpreted as a
 numeric value.</p>
 
-<p>:param:     name The setting name</p>
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Returns the value of the setting with the specified name, interpreted as a
+numeric value.</p>
 
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as an
-            <code>NSNumber</code>.</p>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">number</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSNumber</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting. Will be <code>nil</code> if there is no value for the setting, or if the value couldn’t be interpreted as an <code>NSNumber</code>.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader6numberFT5namedSS7defaultCSo8NSNumber_S1_"></a>
+                    <a name="//apple_ref/swift/Method/number(named:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader6numberFT5namedSS7defaultCSo8NSNumber_S1_">number(named:default:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the value of the setting with the specified name, interpreted as a
+numeric value.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -330,20 +465,52 @@ numeric value.</p>
                         <p>Returns the value of the setting with the specified name, interpreted as a
 numeric value.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as an
-            <code>NSNumber</code>.</p>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">numericValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">number</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">default</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSNumber</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>defaultValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A default value to use in case there is no existing value of the correct type for the given setting.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting, or <code>defaultValue</code> if there is currently no value for the specified setting that can be interpreted as an <code>NSNumber</code>.</p>
+
                       </div>
                     </section>
                   </div>
@@ -351,9 +518,9 @@ numeric value.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader21numericValueOfSettingFTSS11withDefaultCSo8NSNumber_S1_"></a>
-                    <a name="//apple_ref/swift/Method/numericValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader21numericValueOfSettingFTSS11withDefaultCSo8NSNumber_S1_">numericValueOfSetting(_:withDefault:)</a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader3intFT5namedSS_GSqSi_"></a>
+                    <a name="//apple_ref/swift/Method/int(named:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader3intFT5namedSS_GSqSi_">int(named:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -364,41 +531,48 @@ numeric value.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the value of the setting with the specified name, interpreted as a
-numeric value.</p>
-
-<p>:param: name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as an <code>NSNumber</code>.</p>
+                        <p>Returns the value of the setting with the specified name, interpreted as
+an integer value.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Returns the value of the setting with the specified name, interpreted as a
-numeric value.</p>
-
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as an <code>NSNumber</code>.</p>
+                        <p>Returns the value of the setting with the specified name, interpreted as
+an integer value.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">numericValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">int</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting. Will be <code>nil</code> if there is no value for the setting, or if the value couldn’t be interpreted as an <code>Int</code>.</p>
+
                       </div>
                     </section>
                   </div>
@@ -406,9 +580,9 @@ numeric value.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader17intValueOfSettingFSSGSqSi_"></a>
-                    <a name="//apple_ref/swift/Method/intValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader17intValueOfSettingFSSGSqSi_">intValueOfSetting(_:)</a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader3intFT5namedSS7defaultSi_Si"></a>
+                    <a name="//apple_ref/swift/Method/int(named:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader3intFT5namedSS7defaultSi_Si">int(named:default:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -419,35 +593,61 @@ numeric value.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the value of the setting with the specified name, interpreted as an
-integer value.</p>
-
-<p>:param:     name The setting name</p>
-
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as an
-            <code>Int</code>.</p>
+                        <p>Returns the value of the setting with the specified name, interpreted as
+an integer value.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Returns the value of the setting with the specified name, interpreted as an
-integer value.</p>
-
-<p>:param:     name The setting name</p>
-
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as an
-            <code>Int</code>.</p>
+                        <p>Returns the value of the setting with the specified name, interpreted as
+an integer value.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">intValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">int</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">default</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>defaultValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A default value to use in case there is no existing value of the correct type for the given setting.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting, or <code>defaultValue</code> if there is currently no value for the specified setting that can be interpreted as an <code>Int</code>.</p>
+
                       </div>
                     </section>
                   </div>
@@ -455,113 +655,9 @@ integer value.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader17intValueOfSettingFTSS11withDefaultSi_Si"></a>
-                    <a name="//apple_ref/swift/Method/intValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader17intValueOfSettingFTSS11withDefaultSi_Si">intValueOfSetting(_:withDefault:)</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns the value of the setting with the specified name, interpreted as an
-integer value.</p>
-
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as an <code>Int</code>.</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Returns the value of the setting with the specified name, interpreted as an
-integer value.</p>
-
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as an <code>Int</code>.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">intValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader20doubleValueOfSettingFSSGSqSd_"></a>
-                    <a name="//apple_ref/swift/Method/doubleValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader20doubleValueOfSettingFSSGSqSd_">doubleValueOfSetting(_:)</a>
-                    </code>
-                      <span class="declaration-note">
-                        Default implementation
-                      </span>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns the value of the setting with the specified name, interpreted as a
-floating-point value.</p>
-
-<p>:param:     name The setting name</p>
-
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as a
-            <code>Double</code>.</p>
-
-                      </div>
-                      <h4>Default Implementation</h4>
-                      <div class="default_impl abstract">
-                        <p>Returns the value of the setting with the specified name, interpreted as a
-floating-point value.</p>
-
-<p>:param:     name The setting name</p>
-
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as a
-            <code>Double</code>.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">doubleValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader20doubleValueOfSettingFTSS11withDefaultSd_Sd"></a>
-                    <a name="//apple_ref/swift/Method/doubleValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader20doubleValueOfSettingFTSS11withDefaultSd_Sd">doubleValueOfSetting(_:withDefault:)</a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader6doubleFT5namedSS_GSqSd_"></a>
+                    <a name="//apple_ref/swift/Method/double(named:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader6doubleFT5namedSS_GSqSd_">double(named:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -575,14 +671,67 @@ floating-point value.</p>
                         <p>Returns the value of the setting with the specified name, interpreted as a
 floating-point value.</p>
 
-<p>:param:     name The setting name</p>
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Returns the value of the setting with the specified name, interpreted as a
+floating-point value.</p>
 
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">double</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Double</span><span class="p">?</span></code></pre>
 
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as a <code>Double</code>.</p>
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting. Will be <code>nil</code> if there is no value for the setting, or if the value couldn’t be interpreted as a <code>Double</code>.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader6doubleFT5namedSS7defaultSd_Sd"></a>
+                    <a name="//apple_ref/swift/Method/double(named:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader6doubleFT5namedSS7defaultSd_Sd">double(named:default:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the value of the setting with the specified name, interpreted as a
+floating-point value.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
@@ -590,23 +739,52 @@ floating-point value.</p>
                         <p>Returns the value of the setting with the specified name, interpreted as a
 floating-point value.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as a <code>Double</code>.</p>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">doubleValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">double</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">default</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Double</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>defaultValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A default value to use in case there is no existing value of the correct type for the given setting.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting, or <code>defaultValue</code> if there is currently no value for the specified setting that can be interpreted as a <code>Double</code>.</p>
+
                       </div>
                     </section>
                   </div>
@@ -614,9 +792,9 @@ floating-point value.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader20stringValueOfSettingFSSGSqSS_"></a>
-                    <a name="//apple_ref/swift/Method/stringValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader20stringValueOfSettingFSSGSqSS_">stringValueOfSetting(_:)</a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader6stringFT5namedSS_GSqSS_"></a>
+                    <a name="//apple_ref/swift/Method/string(named:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader6stringFT5namedSS_GSqSS_">string(named:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -630,32 +808,45 @@ floating-point value.</p>
                         <p>Returns the value of the setting with the specified name, interpreted as a
 string value.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as a
-            <code>String</code>.</p>
-
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as a
 string value.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as a
-            <code>String</code>.</p>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">stringValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">string</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting. Will be <code>nil</code> if there is no value for the setting, or if the value couldn’t be interpreted as a <code>String</code>.</p>
+
                       </div>
                     </section>
                   </div>
@@ -663,9 +854,9 @@ string value.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader20stringValueOfSettingFTSS11withDefaultSS_SS"></a>
-                    <a name="//apple_ref/swift/Method/stringValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader20stringValueOfSettingFTSS11withDefaultSS_SS">stringValueOfSetting(_:withDefault:)</a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader6stringFT5namedSS7defaultSS_SS"></a>
+                    <a name="//apple_ref/swift/Method/string(named:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader6stringFT5namedSS7defaultSS_SS">string(named:default:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -679,38 +870,58 @@ string value.</p>
                         <p>Returns the value of the setting with the specified name, interpreted as a
 string value.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as a <code>String</code>.</p>
-
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as a
 string value.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as a <code>String</code>.</p>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">stringValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">string</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">default</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>defaultValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A default value to use in case there is no existing value of the correct type for the given setting.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting, or <code>defaultValue</code> if there is currently no value for the specified setting that can be interpreted as a <code>String</code>.</p>
+
                       </div>
                     </section>
                   </div>
@@ -718,9 +929,9 @@ string value.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader19arrayValueOfSettingFSSGSqCSo7NSArray_"></a>
-                    <a name="//apple_ref/swift/Method/arrayValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader19arrayValueOfSettingFSSGSqCSo7NSArray_">arrayValueOfSetting(_:)</a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader5arrayFT5namedSS_GSqCSo7NSArray_"></a>
+                    <a name="//apple_ref/swift/Method/array(named:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader5arrayFT5namedSS_GSqCSo7NSArray_">array(named:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -734,32 +945,45 @@ string value.</p>
                         <p>Returns the value of the setting with the specified name, interpreted as an
 array.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as an
-            <code>NSArray</code>.</p>
-
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Returns the value of the setting with the specified name, interpreted as an
-array.</p>
-
-<p>:param:     name The setting name</p>
-
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as an
-            <code>NSArray</code>.</p>
+                        <p>Returns the value of the setting with the specified name, interpreted as
+an array.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">arrayValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">array</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSArray</span><span class="p">?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting. Will be <code>nil</code> if there is no value for the setting, or if the value couldn’t be interpreted as an <code>NSArray</code>.</p>
+
                       </div>
                     </section>
                   </div>
@@ -767,9 +991,9 @@ array.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader19arrayValueOfSettingFTSS11withDefaultCSo7NSArray_S1_"></a>
-                    <a name="//apple_ref/swift/Method/arrayValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader19arrayValueOfSettingFTSS11withDefaultCSo7NSArray_S1_">arrayValueOfSetting(_:withDefault:)</a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader5arrayFT5namedSS7defaultCSo7NSArray_S1_"></a>
+                    <a name="//apple_ref/swift/Method/array(named:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader5arrayFT5namedSS7defaultCSo7NSArray_S1_">array(named:default:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -780,41 +1004,61 @@ array.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the value of the setting with the specified name, interpreted as an
-array.</p>
-
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as an <code>NSArray</code>.</p>
+                        <p>Returns the value of the setting with the specified name, interpreted as
+an array.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Returns the value of the setting with the specified name, interpreted as an
-array.</p>
-
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as an <code>NSArray</code>.</p>
+                        <p>Returns the value of the setting with the specified name, interpreted as
+an array.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">arrayValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">NSArray</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">array</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">default</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">NSArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSArray</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>defaultValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A default value to use in case there is no existing value of the correct type for the given setting.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting, or <code>defaultValue</code> if there is currently no value for the specified setting that can be interpreted as an <code>NSArray</code>.</p>
+
                       </div>
                     </section>
                   </div>
@@ -822,9 +1066,9 @@ array.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader24dictionaryValueOfSettingFSSGSqCSo12NSDictionary_"></a>
-                    <a name="//apple_ref/swift/Method/dictionaryValueOfSetting(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader24dictionaryValueOfSettingFSSGSqCSo12NSDictionary_">dictionaryValueOfSetting(_:)</a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader10dictionaryFT5namedSS_GSqCSo12NSDictionary_"></a>
+                    <a name="//apple_ref/swift/Method/dictionary(named:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader10dictionaryFT5namedSS_GSqCSo12NSDictionary_">dictionary(named:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -838,32 +1082,45 @@ array.</p>
                         <p>Returns the value of the setting with the specified name, interpreted as a
 dictionary.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as an
-            <code>NSDictionary</code>.</p>
-
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as a
 dictionary.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:returns:   The value of the setting. Will be <code>nil</code> if there is no value for
-            the setting, or if the value couldn&rsquo;t be interpreted as an
-            <code>NSDictionary</code>.</p>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">dictionaryValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">dictionary</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSDictionary</span><span class="p">?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting. Will be <code>nil</code> if there is no value for the setting, or if the value couldn’t be interpreted as an <code>NSDictionary</code>.</p>
+
                       </div>
                     </section>
                   </div>
@@ -871,9 +1128,9 @@ dictionary.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader24dictionaryValueOfSettingFTSS11withDefaultCSo12NSDictionary_S1_"></a>
-                    <a name="//apple_ref/swift/Method/dictionaryValueOfSetting(_:withDefault:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader24dictionaryValueOfSettingFTSS11withDefaultCSo12NSDictionary_S1_">dictionaryValueOfSetting(_:withDefault:)</a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader10dictionaryFT5namedSS7defaultCSo12NSDictionary_S1_"></a>
+                    <a name="//apple_ref/swift/Method/dictionary(named:default:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader10dictionaryFT5namedSS7defaultCSo12NSDictionary_S1_">dictionary(named:default:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -887,38 +1144,58 @@ dictionary.</p>
                         <p>Returns the value of the setting with the specified name, interpreted as
 a dictionary.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as an <code>NSDictionary</code>.</p>
-
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as
 a dictionary.</p>
 
-<p>:param:     name The setting name</p>
-
-<p>:param:     defaultValue A default value to use in case there is no existing
-            value of the correct type for the given setting.</p>
-
-<p>:returns:   The value of the setting, or <code>defaultValue</code> if there is
-            currently no value for the specified setting that can be
-            interpreted as an <code>NSDictionary</code>.</p>
-
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">dictionaryValueOfSetting</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">withDefault</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">NSDictionary</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">dictionary</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">default</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">NSDictionary</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSDictionary</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the setting whose value is to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>defaultValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A default value to use in case there is no existing value of the correct type for the given setting.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The value of the setting, or <code>defaultValue</code> if there is currently no value for the specified setting that can be interpreted as an <code>NSDictionary</code>.</p>
+
                       </div>
                     </section>
                   </div>
@@ -929,7 +1206,7 @@ a dictionary.</p>
         </section>
         <section id="footer">
           <p>© 2015-2016 <a class="link" href="http://tech.gilt.com/" target="_blank" rel="external">Gilt Groupe</a></p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
