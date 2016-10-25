@@ -24,7 +24,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    func set(value: Any, named name: String)
+    mutating func set(value: Any, named name: String)
 
     /**
      Changes the value of the given setting to the specified boolean.
@@ -33,7 +33,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    func set(bool value: Bool, named name: String)
+    mutating func set(bool value: Bool, named name: String)
 
     /**
      Changes the value of the given setting to the specified integer.
@@ -42,7 +42,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    func set(int value: Int, named name: String)
+    mutating func set(int value: Int, named name: String)
 
     /**
      Changes the value of the given setting to the specified `Double`.
@@ -51,7 +51,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    func set(double value: Double, named name: String)
+    mutating func set(double value: Double, named name: String)
 
     /**
      Changes the value of the given setting to the specified string.
@@ -60,7 +60,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    func set(string value: String, named name: String)
+    mutating func set(string value: String, named name: String)
 
     /**
      Changes the value of the given setting to the specified array.
@@ -69,7 +69,7 @@ public protocol AppSettingsWriter: AppSettingsReader
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    func set(array value: [Any], named name: String)
+    mutating func set(array value: [Any], named name: String)
 
     /**
      Changes the value of the given setting to the specified dictionary.
@@ -78,14 +78,14 @@ public protocol AppSettingsWriter: AppSettingsReader
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    func set(dictionary value: [String: Any], named name: String)
+    mutating func set(dictionary value: [String: Any], named name: String)
 
     /**
      Removes the existing value (if any) for the setting with the given name.
 
      - parameter name: The name of the setting whose value is to be removed.
      */
-    func removeValue(named name: String)
+    mutating func removeValue(named name: String)
 }
 
 extension AppSettingsWriter
@@ -97,9 +97,9 @@ extension AppSettingsWriter
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    public func set(bool value: Bool, named name: String)
+    public mutating func set(bool value: Bool, named name: String)
     {
-        set(value: NSNumber(value: value), named: name)
+        set(value: value, named: name)
     }
 
     /**
@@ -109,9 +109,9 @@ extension AppSettingsWriter
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    public func set(int value: Int, named name: String)
+    public mutating func set(int value: Int, named name: String)
     {
-        set(value: NSNumber(value: value), named: name)
+        set(value: value, named: name)
     }
 
     /**
@@ -121,9 +121,9 @@ extension AppSettingsWriter
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    public func set(double value: Double, named name: String)
+    public mutating func set(double value: Double, named name: String)
     {
-        set(value: NSNumber(value: value), named: name)
+        set(value: value, named: name)
     }
 
     /**
@@ -133,9 +133,9 @@ extension AppSettingsWriter
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    public func set(string value: String, named name: String)
+    public mutating func set(string value: String, named name: String)
     {
-        set(value: value as NSString, named: name)
+        set(value: value, named: name)
     }
 
     /**
@@ -145,7 +145,7 @@ extension AppSettingsWriter
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    public func set(array value: [Any], named name: String)
+    public mutating func set(array value: [Any], named name: String)
     {
         set(value: value, named: name)
     }
@@ -157,7 +157,7 @@ extension AppSettingsWriter
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    public func set(dictionary value: [String: Any], named name: String)
+    public mutating func set(dictionary value: [String: Any], named name: String)
     {
         set(value: value, named: name)
     }

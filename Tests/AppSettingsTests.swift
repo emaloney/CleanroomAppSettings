@@ -12,7 +12,7 @@ import CleanroomAppSettings
 
 class AppSettingsTests: XCTestCase
 {
-    func setupWriter(_ writer: AppSettingsWriter)
+    func setupWriter(_ writer: inout AppSettingsWriter)
     {
         // for general testing
         writer.set(value: "foo:bar", named: "foobar")
@@ -35,7 +35,7 @@ class AppSettingsTests: XCTestCase
         writer.set(value: "1", named: "boolTrue")
     }
 
-    func testRemoveValue(_ writer: AppSettingsWriter, usingReader reader: AppSettingsReader)
+    func testRemoveValue(_ writer: inout AppSettingsWriter, usingReader reader: AppSettingsReader)
     {
         // test removing a value
         writer.set(bool: true, named: "notRemoved")
@@ -44,10 +44,10 @@ class AppSettingsTests: XCTestCase
         XCTAssertNil(reader.value(named: "notRemoved"))
     }
 
-    func testRemoveValue(_ writer: AppSettingsWriter)
+    func testRemoveValue(_ writer: inout AppSettingsWriter)
     {
         // test reading directly from the writer
-        testRemoveValue(writer, usingReader: writer)
+        testRemoveValue(&writer, usingReader: writer)
     }
 
     func testReading(_ reader: AppSettingsReader)
@@ -127,37 +127,25 @@ class AppSettingsTests: XCTestCase
         XCTAssertEqual(reader.bool(named: "boolTrue")!, true)
     }
 
-    func testAppSettingsAPI()
+    func testSharedReferenceSemantics()
     {
         // write some values
-        let writer = NSMutableDictionary()
-        setupWriter(writer)
+        let writerDict = NSMutableDictionary()
+        var writer: AppSettingsWriter = writerDict
+        setupWriter(&writer)
 
         // test reading back values
         testReading(writer)
 
         // test removing a value
-        testRemoveValue(writer)
+        testRemoveValue(&writer)
 
         // test removing a value (alternate verification)
         writer.set(bool: true, named: "notRemoved2")
-        XCTAssertNotNil(writer.object(forKey: "notRemoved2"))
-        dump(writer.object(forKey: "notRemoved2"))
+        XCTAssertNotNil(writerDict["notRemoved2"])
+        dump(writerDict["notRemoved2"])
         writer.removeValue(named: "notRemoved2")
-        dump(writer.object(forKey: "notRemoved2"))
-        XCTAssert(writer.object(forKey: "notRemoved2") == nil)
-    }
-
-    func testNSUserDefaultsImplementation()
-    {
-        // write some values
-        let writer = NSMutableDictionary()
-        setupWriter(writer)
-
-        // test reading back values
-        testReading(writer)
-
-        // test removing a value
-        testRemoveValue(writer)
+        dump(writerDict["notRemoved2"])
+        XCTAssertNil(writerDict["notRemoved2"])
     }
 }
