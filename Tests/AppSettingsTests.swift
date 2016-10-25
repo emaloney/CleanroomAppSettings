@@ -75,10 +75,10 @@ class AppSettingsTests: XCTestCase
         XCTAssertEqual(reader.double(named: "acceleration")!, 9.8)
         XCTAssertEqual(reader.double(named: "zeroDouble")!, 0.0)
         XCTAssertEqual(reader.string(named: "this is my string")!, "there are many like it but this one is mine")
-        XCTAssertEqual(reader.array(named: "emptyArray")!, [])
-        XCTAssertEqual(reader.array(named: "evenArray")!, [2, 4, 6, 8, 10])
-        XCTAssertEqual(reader.dictionary(named: "emptyDict")!, [:])
-        XCTAssertEqual(reader.dictionary(named: "threeOrdinals")!, ["1": "one", "2": "two", "3": "three"])
+        XCTAssertEqual(reader.array(named: "emptyArray") as! [String], [String]())
+        XCTAssertEqual(reader.array(named: "evenArray") as! [Int], [2, 4, 6, 8, 10])
+        XCTAssertEqual(reader.dictionary(named: "emptyDict") as! [String: String], [String: String]())
+        XCTAssertEqual(reader.dictionary(named: "threeOrdinals") as! [String: String], ["1": "one", "2": "two", "3": "three"])
 
         // test expected nil returns for nonexistent keys
         XCTAssertNil(reader.value(named: "nonexistent"))
@@ -101,10 +101,9 @@ class AppSettingsTests: XCTestCase
         XCTAssertNotNil(reader.string(named: "nonexistent", default: "foo/bar"))
         XCTAssertEqual(reader.string(named: "nonexistent", default: "foo/bar"), "foo/bar")
         XCTAssertNotNil(reader.array(named: "nonexistent", default: [1, 3, 5, 7, 9]))
-        XCTAssertEqual(reader.array(named: "nonexistent", default: [1, 3, 5, 7, 9]), [1, 3, 5, 7, 9])
-
+        XCTAssertEqual(reader.array(named: "nonexistent", default: [1, 3, 5, 7, 9]) as! [Int], [1, 3, 5, 7, 9])
         XCTAssertNotNil(reader.dictionary(named: "nonexistent", default: ["one": 2, "free": "four"]))
-        XCTAssertEqual(reader.dictionary(named: "nonexistent", default: ["one": 2, "free": "four"]), ["one": 2, "free": "four"])
+        XCTAssertEqual(reader.dictionary(named: "nonexistent", default: ["one": 2 as NSNumber, "free": "four" as NSString]) as! [String: NSObject], ["one": 2 as NSNumber, "free": "four" as NSString])
 
         // test default values for existing keys
         XCTAssertNotEqual(reader.value(named: "foobar", default: "boo:far") as? String, "boo:far")
@@ -115,10 +114,9 @@ class AppSettingsTests: XCTestCase
         XCTAssertNotEqual(reader.double(named: "acceleration", default: 10.0), 10.0)
         XCTAssertNotEqual(reader.double(named: "zeroDouble", default: 22.6), 22.6)
         XCTAssertNotEqual(reader.string(named: "this is my string", default: "nothing"), "nothing")
-        XCTAssertNotEqual(reader.array(named: "emptyArray", default: [1]), [1])
-        XCTAssertNotEqual(reader.array(named: "evenArray", default: [2, 4, 6, 8]), [2, 4, 6, 8])
-        XCTAssertNotEqual(reader.dictionary(named: "emptyDict", default: ["a": "b"]), ["a": "b"])
-        XCTAssertNotEqual(reader.dictionary(named: "threeOrdinals", default: [4: "four"]), [4: "four"])
+        XCTAssertNotEqual(reader.array(named: "emptyArray", default: [1]) as! [Int], [1])
+        XCTAssertNotEqual(reader.array(named: "evenArray", default: [2, 4, 6, 8]) as! [Int], [2, 4, 6, 8])
+        XCTAssertNotEqual(reader.dictionary(named: "emptyDict", default: ["a": "b"]) as! [String: String], ["a": "b"])
 
         // test simple type conversion
         XCTAssertEqual(reader.double(named: "marathon")!, 26.2)
