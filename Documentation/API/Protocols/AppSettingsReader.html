@@ -929,9 +929,9 @@ string value.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader5arrayFT5namedSS_GSqCSo7NSArray_"></a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader5arrayFT5namedSS_GSqGSaP___"></a>
                     <a name="//apple_ref/swift/Method/array(named:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader5arrayFT5namedSS_GSqCSo7NSArray_">array(named:)</a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader5arrayFT5namedSS_GSqGSaP___">array(named:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -949,14 +949,14 @@ array.</p>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as
-an array.</p>
+an array of <code>Any</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">array</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSArray</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">array</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]?</span></code></pre>
 
                         </div>
                       </div>
@@ -982,7 +982,7 @@ an array.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The value of the setting. Will be <code>nil</code> if there is no value for the setting, or if the value couldn’t be interpreted as an <code>NSArray</code>.</p>
+                        <p>The value of the setting. Will be <code>nil</code> if there is no value for the setting, or if the value couldn’t be interpreted as an array of <code>Any</code>.</p>
 
                       </div>
                     </section>
@@ -991,9 +991,9 @@ an array.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader5arrayFT5namedSS7defaultCSo7NSArray_S1_"></a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader5arrayFT5namedSS7defaultGSaP___GSaP__"></a>
                     <a name="//apple_ref/swift/Method/array(named:default:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader5arrayFT5namedSS7defaultCSo7NSArray_S1_">array(named:default:)</a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader5arrayFT5namedSS7defaultGSaP___GSaP__">array(named:default:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -1005,20 +1005,20 @@ an array.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as
-an array.</p>
+an array of <code>Any</code>.</p>
 
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as
-an array.</p>
+an array of <code>Any</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">array</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">default</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">NSArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSArray</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">array</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">default</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -1057,7 +1057,7 @@ an array.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>The value of the setting, or <code>defaultValue</code> if there is currently no value for the specified setting that can be interpreted as an <code>NSArray</code>.</p>
+                        <p>The value of the setting, or <code>defaultValue</code> if there is currently no value for the specified setting that can be interpreted as an array of <code>Any</code>.</p>
 
                       </div>
                     </section>
@@ -1066,9 +1066,9 @@ an array.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader10dictionaryFT5namedSS_GSqCSo12NSDictionary_"></a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader10dictionaryFT5namedSS_GSqGVs10DictionarySSP___"></a>
                     <a name="//apple_ref/swift/Method/dictionary(named:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader10dictionaryFT5namedSS_GSqCSo12NSDictionary_">dictionary(named:)</a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader10dictionaryFT5namedSS_GSqGVs10DictionarySSP___">dictionary(named:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -1086,14 +1086,14 @@ dictionary.</p>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as a
-dictionary.</p>
+a <code>[String: Any]</code> dictionary.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">dictionary</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSDictionary</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">dictionary</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span></code></pre>
 
                         </div>
                       </div>
@@ -1128,9 +1128,9 @@ dictionary.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader10dictionaryFT5namedSS7defaultCSo12NSDictionary_S1_"></a>
+                    <a name="/s:FP20CleanroomAppSettings17AppSettingsReader10dictionaryFT5namedSS7defaultGVs10DictionarySSP___GS1_SSP__"></a>
                     <a name="//apple_ref/swift/Method/dictionary(named:default:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader10dictionaryFT5namedSS7defaultCSo12NSDictionary_S1_">dictionary(named:default:)</a>
+                    <a class="token" href="#/s:FP20CleanroomAppSettings17AppSettingsReader10dictionaryFT5namedSS7defaultGVs10DictionarySSP___GS1_SSP__">dictionary(named:default:)</a>
                     </code>
                       <span class="declaration-note">
                         Default implementation
@@ -1148,14 +1148,14 @@ a dictionary.</p>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
                         <p>Returns the value of the setting with the specified name, interpreted as
-a dictionary.</p>
+a a <code>[String: Any]</code> dictionary.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">dictionary</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">default</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="kt">NSDictionary</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSDictionary</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">dictionary</span><span class="p">(</span><span class="n">named</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="k">default</span> <span class="n">defaultValue</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
