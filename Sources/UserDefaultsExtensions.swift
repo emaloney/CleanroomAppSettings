@@ -59,7 +59,7 @@ extension UserDefaults: AppSettingsWriter
 
      - parameter name: The name of the setting whose value is to be removed.
      */
-    public func removeSetting(named name: String)
+    public func removeValue(named name: String)
     {
         removeObject(forKey: name)
     }

@@ -78,14 +78,14 @@ public protocol AppSettingsWriter: AppSettingsReader
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    func set(dictionary value: [AnyHashable: Any], named name: String)
+    func set(dictionary value: [String: Any], named name: String)
 
     /**
      Removes the existing value (if any) for the setting with the given name.
 
      - parameter name: The name of the setting whose value is to be removed.
      */
-    func removeSetting(named name: String)
+    func removeValue(named name: String)
 }
 
 extension AppSettingsWriter
@@ -147,7 +147,7 @@ extension AppSettingsWriter
      */
     public func set(array value: [Any], named name: String)
     {
-        set(value: value as NSArray, named: name)
+        set(value: value, named: name)
     }
 
     /**
@@ -157,9 +157,9 @@ extension AppSettingsWriter
 
      - parameter name: The name of the setting whose value is to be changed.
      */
-    public func set(dictionary value: [AnyHashable: Any], named name: String)
+    public func set(dictionary value: [String: Any], named name: String)
     {
-        set(value: value as NSDictionary, named: name)
+        set(value: value, named: name)
     }
 }
 

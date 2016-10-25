@@ -40,7 +40,7 @@ class AppSettingsTests: XCTestCase
         // test removing a value
         writer.set(bool: true, named: "notRemoved")
         XCTAssertNotNil(reader.value(named: "notRemoved"))
-        writer.removeSetting(named: "notRemoved")
+        writer.removeValue(named: "notRemoved")
         XCTAssertNil(reader.value(named: "notRemoved"))
     }
 
@@ -145,7 +145,7 @@ class AppSettingsTests: XCTestCase
         writer.set(bool: true, named: "notRemoved2")
         XCTAssertNotNil(writer.object(forKey: "notRemoved2"))
         dump(writer.object(forKey: "notRemoved2"))
-        writer.removeSetting(named: "notRemoved2")
+        writer.removeValue(named: "notRemoved2")
         dump(writer.object(forKey: "notRemoved2"))
         XCTAssert(writer.object(forKey: "notRemoved2") == nil)
     }

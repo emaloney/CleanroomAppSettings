@@ -192,13 +192,14 @@ public protocol AppSettingsReader
      - parameter name: The name of the setting whose value is to be retrieved.
 
      - returns: The value of the setting. Will be `nil` if there is no value
-     for the setting, or if the value couldn't be interpreted as an `NSArray`.
+     for the setting, or if the value couldn't be interpreted as an array of 
+     `Any`.
      */
-    func array(named name: String) -> NSArray?
+    func array(named name: String) -> [Any]?
 
     /**
      Returns the value of the setting with the specified name, interpreted as
-     an array.
+     an array of `Any`.
 
      - parameter name: The name of the setting whose value is to be retrieved.
 
@@ -207,9 +208,9 @@ public protocol AppSettingsReader
 
      - returns: The value of the setting, or `defaultValue` if there is
      currently no value for the specified setting that can be interpreted as
-     an `NSArray`.
+     an array of `Any`.
      */
-    func array(named name: String, default defaultValue: NSArray) -> NSArray
+    func array(named name: String, default defaultValue: [Any]) -> [Any]
 
     /**
      Returns the value of the setting with the specified name, interpreted as a
@@ -221,7 +222,7 @@ public protocol AppSettingsReader
      for the setting, or if the value couldn't be interpreted as an
      `NSDictionary`.
      */
-    func dictionary(named name: String) -> NSDictionary?
+    func dictionary(named name: String) -> [String: Any]?
 
     /**
      Returns the value of the setting with the specified name, interpreted as
@@ -236,7 +237,7 @@ public protocol AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      an `NSDictionary`.
      */
-    func dictionary(named name: String, default defaultValue: NSDictionary) -> NSDictionary
+    func dictionary(named name: String, default defaultValue: [String: Any]) -> [String: Any]
 }
 
 public extension AppSettingsReader
@@ -454,22 +455,23 @@ public extension AppSettingsReader
 
     /**
      Returns the value of the setting with the specified name, interpreted as
-     an array.
+     an array of `Any`.
 
      - parameter name: The name of the setting whose value is to be retrieved.
 
      - returns: The value of the setting. Will be `nil` if there is no value
-     for the setting, or if the value couldn't be interpreted as an `NSArray`.
+     for the setting, or if the value couldn't be interpreted as an array of 
+     `Any`.
      */
     public func array(named name: String)
-        -> NSArray?
+        -> [Any]?
     {
-        return value(named: name) as? NSArray
+        return value(named: name) as? [Any]
     }
 
     /**
      Returns the value of the setting with the specified name, interpreted as
-     an array.
+     an array of `Any`.
 
      - parameter name: The name of the setting whose value is to be retrieved.
 
@@ -477,34 +479,34 @@ public extension AppSettingsReader
      existing value of the correct type for the given setting.
 
      - returns: The value of the setting, or `defaultValue` if there is
-     currently no value for the specified setting that can be interpreted as
-     an `NSArray`.
+     currently no value for the specified setting that can be interpreted as 
+     an array of `Any`.
      */
-    public func array(named name: String, default defaultValue: NSArray)
-        -> NSArray
+    public func array(named name: String, default defaultValue: [Any])
+        -> [Any]
     {
         return array(named: name) ?? defaultValue
     }
 
     /**
      Returns the value of the setting with the specified name, interpreted as a
-     dictionary.
+     a `[String: Any]` dictionary.
 
      - parameter name: The name of the setting whose value is to be retrieved.
 
      - returns: The value of the setting. Will be `nil` if there is no value
-     for the setting, or if the value couldn't be interpreted as an
-     `NSDictionary`.
+     for the setting, or if the value couldn't be interpreted as a 
+     `[String: Any]` dictionary.
      */
     public func dictionary(named name: String)
-        -> NSDictionary?
+        -> [String: Any]?
     {
-        return value(named: name) as? NSDictionary
+        return value(named: name) as? [String: Any]
     }
 
     /**
      Returns the value of the setting with the specified name, interpreted as
-     a dictionary.
+     a a `[String: Any]` dictionary.
 
      - parameter name: The name of the setting whose value is to be retrieved.
 
@@ -513,10 +515,10 @@ public extension AppSettingsReader
 
      - returns: The value of the setting, or `defaultValue` if there is
      currently no value for the specified setting that can be interpreted as
-     an `NSDictionary`.
+     a `[String: Any]` dictionary.
      */
-    public func dictionary(named name: String, default defaultValue: NSDictionary)
-        -> NSDictionary
+    public func dictionary(named name: String, default defaultValue: [String: Any])
+        -> [String: Any]
     {
         return dictionary(named: name) ?? defaultValue
     }
