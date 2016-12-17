@@ -1,4 +1,4 @@
-![Gilt Tech logo](https://raw.githubusercontent.com/gilt/Cleanroom/xcode-8.2/Assets/gilt-tech-logo.png)
+![Gilt Tech logo](https://raw.githubusercontent.com/gilt/Cleanroom/master/Assets/gilt-tech-logo.png)
 
 # CleanroomAppSettings Integration Notes
 
@@ -13,7 +13,7 @@ Macintosh|macOS 10.12|macOS 10.10
 Apple TV|tvOS 10.1|tvOS 9.0
 Apple Watch|watchOS 3.1|watchOS 2.0
 
-**This is the `xcode-8.2` branch of CleanroomAppSettings.** It uses **Swift 3.0.2** and **requires Xcode 8.2** to compile.
+CleanroomAppSettings uses **Swift 3.0.2** and **requires Xcode 8.2** to compile.
 
 ### Options for integration
 
@@ -106,7 +106,7 @@ Select the appropriate Build Scheme for your Target, and press `⌘-B` to try to
 
 ### You're done!
 
-Once properly integrated, you can make use of [the API](https://rawgit.com/emaloney/CleanroomAppSettings/xcode-8.2/Documentation/API/index.html) provided by CleanroomAppSettings using the statement:
+Once properly integrated, you can make use of [the API](https://rawgit.com/emaloney/CleanroomAppSettings/master/Documentation/API/index.html) provided by CleanroomAppSettings using the statement:
 
 ```swift
 import CleanroomAppSettings
@@ -161,7 +161,7 @@ Select the appropriate Build Scheme for your Target, and press `⌘-B` to try to
 
 ### You're done!
 
-Once properly integrated, you can make use of [the API](https://rawgit.com/emaloney/CleanroomAppSettings/xcode-8.2/Documentation/API/index.html) provided by CleanroomAppSettings using the statement:
+Once properly integrated, you can make use of [the API](https://rawgit.com/emaloney/CleanroomAppSettings/master/Documentation/API/index.html) provided by CleanroomAppSettings using the statement:
 
 ```swift
 import CleanroomAppSettings
@@ -169,6 +169,6 @@ import CleanroomAppSettings
 
 ## Further Reading
 
-Want to learn more about CleanroomAppSettings? Check out [the README](https://github.com/emaloney/CleanroomAppSettings/blob/xcode-8.2/README.md) or [the API documentation](https://rawgit.com/emaloney/CleanroomAppSettings/xcode-8.2/Documentation/API/index.html).
+Want to learn more about CleanroomAppSettings? Check out [the README](https://github.com/emaloney/CleanroomAppSettings/blob/master/README.md) or [the API documentation](https://rawgit.com/emaloney/CleanroomAppSettings/master/Documentation/API/index.html).
 
 **_Happy coding!_**
