@@ -12,7 +12,7 @@
 		3B9597691DB1843500CFD8A4 /* AppSettingsWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9597651DB1843500CFD8A4 /* AppSettingsWriter.swift */; };
 		3B95976A1DB1843500CFD8A4 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9597661DB1843500CFD8A4 /* DictionaryExtensions.swift */; };
 		3B95976B1DB1843500CFD8A4 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9597671DB1843500CFD8A4 /* UserDefaultsExtensions.swift */; };
-		3B95976D1DB1844100CFD8A4 /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B95976C1DB1844100CFD8A4 /* AppSettingsTests.swift */; };
+		3BA07AB01E44309D004627F8 /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA07AAF1E44309D004627F8 /* AppSettingsTests.swift */; };
 		3BD420941DBFA8A700E6DC38 /* NSDictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD420931DBFA8A700E6DC38 /* NSDictionaryExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,7 @@
 		3B9597651DB1843500CFD8A4 /* AppSettingsWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsWriter.swift; sourceTree = "<group>"; };
 		3B9597661DB1843500CFD8A4 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		3B9597671DB1843500CFD8A4 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
-		3B95976C1DB1844100CFD8A4 /* AppSettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsTests.swift; sourceTree = "<group>"; };
+		3BA07AAF1E44309D004627F8 /* AppSettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppSettingsTests.swift; path = CleanroomAppSettingsTests/AppSettingsTests.swift; sourceTree = "<group>"; };
 		3BD420931DBFA8A700E6DC38 /* NSDictionaryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDictionaryExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +119,7 @@
 		3B9059321DAECF7F00B4EEC0 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3B95976C1DB1844100CFD8A4 /* AppSettingsTests.swift */,
+				3BA07AAF1E44309D004627F8 /* AppSettingsTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B95976D1DB1844100CFD8A4 /* AppSettingsTests.swift in Sources */,
+				3BA07AB01E44309D004627F8 /* AppSettingsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
