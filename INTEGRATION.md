@@ -9,12 +9,12 @@ CleanroomAppSettings is designed as a *universal Swift framework* with support f
 
 Platform|Latest supported OS|Oldest supported OS
 --------|-------------------|-------------------
-iPhone/iPad|iOS 10.2|iOS 9.0
+iPhone/iPad|iOS 10.3|iOS 9.0
 Macintosh|macOS 10.12|macOS 10.11
-Apple TV|tvOS 10.1|tvOS 9.0
-Apple Watch|watchOS 3.1|watchOS 2.0
+Apple TV|tvOS 10.2|tvOS 9.0
+Apple Watch|watchOS 3.2|watchOS 2.0
 
-CleanroomAppSettings uses **Swift 3.0.2** and **requires Xcode 8.2** to compile.
+CleanroomAppSettings uses **Swift 3.1** and **requires Xcode 8.3** to compile.
 
 ### Options for integration
 
