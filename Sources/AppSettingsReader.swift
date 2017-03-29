@@ -23,7 +23,7 @@ import Foundation
  This framework also extends `UserDefaults`, allowing it to be used as an
  `AppSettingsReader`.
  */
-public protocol AppSettingsReader
+public protocol AppSettingsReader: class
 {
     /**
      Returns the names of the application settings for which values currently
