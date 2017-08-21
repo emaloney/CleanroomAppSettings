@@ -10,7 +10,9 @@ CleanroomAppSettings is part of [the Cleanroom Project](https://github.com/gilt/
 
 ### Swift compatibility
 
-This is the `master` branch. It uses **Swift 3.1** and **requires Xcode 8.3** to compile.
+**Important:** This is the `swift-4` branch. It uses **Swift 4.0** and **requires Xcode 9.0 beta** to compile.
+
+If you need Swift 3.1 compatibility, use the [`master`](https://github.com/emaloney/CleanroomAppSettings) branch, which requires Xcode 8.3.
 
 
 #### Current status
@@ -18,11 +20,11 @@ This is the `master` branch. It uses **Swift 3.1** and **requires Xcode 8.3** to
 Branch|Build status
 --------|------------------------
 [`master`](https://github.com/emaloney/CleanroomAppSettings)|[![Build status: master branch](https://travis-ci.org/emaloney/CleanroomAppSettings.svg?branch=master)](https://travis-ci.org/emaloney/CleanroomAppSettings)
-
+[`swift-4`](https://github.com/emaloney/CleanroomAppSettings/tree/swift-4)|[![Build status: swift-4 branch](https://travis-ci.org/emaloney/CleanroomAppSettings.svg?branch=swift-4)](https://travis-ci.org/emaloney/CleanroomAppSettings)
 
 ### License
 
-CleanroomAppSettings is distributed under [the MIT license](https://github.com/emaloney/CleanroomAppSettings/blob/master/LICENSE).
+CleanroomAppSettings is distributed under [the MIT license](https://github.com/emaloney/CleanroomAppSettings/blob/swift-4/LICENSE).
 
 CleanroomAppSettings is provided for your use—free-of-charge—on an as-is basis. We make no guarantees, promises or apologies. *Caveat developer.*
 
@@ -41,7 +43,7 @@ github "emaloney/CleanroomAppSettings" ~> 1.4.0
 
 Then, use the `carthage` command to [update your dependencies](https://github.com/Carthage/Carthage#upgrading-frameworks).
 
-Finally, you’ll need to [integrate CleanroomAppSettings into your project](https://github.com/emaloney/CleanroomAppSettings/blob/master/INTEGRATION.md) in order to use [the API](https://rawgit.com/emaloney/CleanroomAppSettings/master/Documentation/API/index.html) it provides.
+Finally, you’ll need to [integrate CleanroomAppSettings into your project](https://github.com/emaloney/CleanroomAppSettings/blob/swift-4/INTEGRATION.md) in order to use [the API](https://rawgit.com/emaloney/CleanroomAppSettings/swift-4/Documentation/API/index.html) it provides.
 
 Once successfully integrated, just add the following statement to any Swift file where you want to use CleanroomAppSettings:
 
@@ -49,11 +51,11 @@ Once successfully integrated, just add the following statement to any Swift file
 import CleanroomAppSettings
 ```
 
-See [the Integration document](https://github.com/emaloney/CleanroomAppSettings/blob/master/INTEGRATION.md) for additional details on integrating CleanroomAppSettings into your project.
+See [the Integration document](https://github.com/emaloney/CleanroomAppSettings/blob/swift-4/INTEGRATION.md) for additional details on integrating CleanroomAppSettings into your project.
 
 ### API documentation
 
-For detailed information on using CleanroomAppSettings, [API documentation](https://rawgit.com/emaloney/CleanroomAppSettings/master/Documentation/API/index.html) is available.
+For detailed information on using CleanroomAppSettings, [API documentation](https://rawgit.com/emaloney/CleanroomAppSettings/swift-4/Documentation/API/index.html) is available.
 
 
 ## About
