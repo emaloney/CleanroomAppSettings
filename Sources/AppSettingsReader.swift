@@ -253,7 +253,7 @@ public extension AppSettingsReader
      - returns: The value of the setting, or `defaultValue` if there is
      currently no value for the specified setting.
      */
-    public func value(named name: String, default defaultValue: Any)
+    func value(named name: String, default defaultValue: Any)
         -> Any
     {
         return value(named: name) ?? defaultValue
@@ -268,7 +268,7 @@ public extension AppSettingsReader
      - returns: The value of the setting. Will be `nil` if there is no value
      for the setting, or if the value couldn't be interpreted as a `Bool`.
      */
-    public func bool(named name: String)
+    func bool(named name: String)
         -> Bool?
     {
         guard let int = int(named: name) else {
@@ -291,7 +291,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      a `Bool`.
      */
-    public func bool(named name: String, default defaultValue: Bool)
+    func bool(named name: String, default defaultValue: Bool)
         -> Bool
     {
         return bool(named: name) ?? defaultValue
@@ -306,7 +306,7 @@ public extension AppSettingsReader
      - returns: The value of the setting. Will be `nil` if there is no value
      for the setting, or if the value couldn't be interpreted as an `NSNumber`.
      */
-    public func number(named name: String)
+    func number(named name: String)
         -> NSNumber?
     {
         guard let val = value(named: name) else {
@@ -335,7 +335,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      an `NSNumber`.
      */
-    public func number(named name: String, default defaultValue: NSNumber)
+    func number(named name: String, default defaultValue: NSNumber)
         -> NSNumber
     {
         return number(named: name) ?? defaultValue
@@ -350,7 +350,7 @@ public extension AppSettingsReader
      - returns: The value of the setting. Will be `nil` if there is no value
      for the setting, or if the value couldn't be interpreted as an `Int`.
      */
-    public func int(named name: String)
+    func int(named name: String)
         -> Int?
     {
         return number(named: name)?.intValue
@@ -369,7 +369,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      an `Int`.
      */
-    public func int(named name: String, default defaultValue: Int)
+    func int(named name: String, default defaultValue: Int)
         -> Int
     {
         return int(named: name) ?? defaultValue
@@ -384,7 +384,7 @@ public extension AppSettingsReader
      - returns: The value of the setting. Will be `nil` if there is no value
      for the setting, or if the value couldn't be interpreted as a `Double`.
      */
-    public func double(named name: String)
+    func double(named name: String)
         -> Double?
     {
         return number(named: name)?.doubleValue
@@ -403,7 +403,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as 
      a `Double`.
      */
-    public func double(named name: String, default defaultValue: Double)
+    func double(named name: String, default defaultValue: Double)
         -> Double
     {
         return double(named: name) ?? defaultValue
@@ -418,7 +418,7 @@ public extension AppSettingsReader
      - returns: The value of the setting. Will be `nil` if there is no value
      for the setting, or if the value couldn't be interpreted as a `String`.
      */
-    public func string(named name: String)
+    func string(named name: String)
         -> String?
     {
         guard let val = value(named: name) else {
@@ -447,7 +447,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      a `String`.
      */
-    public func string(named name: String, default defaultValue: String)
+    func string(named name: String, default defaultValue: String)
         -> String
     {
         return string(named: name) ?? defaultValue
@@ -463,7 +463,7 @@ public extension AppSettingsReader
      for the setting, or if the value couldn't be interpreted as an array of 
      `Any`.
      */
-    public func array(named name: String)
+    func array(named name: String)
         -> [Any]?
     {
         return value(named: name) as? [Any]
@@ -482,7 +482,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as 
      an array of `Any`.
      */
-    public func array(named name: String, default defaultValue: [Any])
+    func array(named name: String, default defaultValue: [Any])
         -> [Any]
     {
         return array(named: name) ?? defaultValue
@@ -498,7 +498,7 @@ public extension AppSettingsReader
      for the setting, or if the value couldn't be interpreted as a 
      `[String: Any]` dictionary.
      */
-    public func dictionary(named name: String)
+    func dictionary(named name: String)
         -> [String: Any]?
     {
         return value(named: name) as? [String: Any]
@@ -517,7 +517,7 @@ public extension AppSettingsReader
      currently no value for the specified setting that can be interpreted as
      a `[String: Any]` dictionary.
      */
-    public func dictionary(named name: String, default defaultValue: [String: Any])
+    func dictionary(named name: String, default defaultValue: [String: Any])
         -> [String: Any]
     {
         return dictionary(named: name) ?? defaultValue
