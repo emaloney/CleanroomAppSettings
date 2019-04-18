@@ -92,7 +92,7 @@ runDestinationForPlatform()
 {
 	case $1 in
 	iOS)
-		SIMULATOR_ID=`xcrun simctl list | grep -v unavailable | grep "iPad Pro" | grep inch | tail -1 | sed "s/^.*inch) (//" | sed "s/).*$//"`
+		SIMULATOR_ID=`xcrun simctl list | grep -v unavailable | grep "iPad Pro" | grep inch | tail -1 | sed "s/^.*inch) (//" | sed "s/^.*generation) (//" | sed "s/).*$//"`
 		echo "id=$SIMULATOR_ID"
 		;;
 
@@ -101,12 +101,12 @@ runDestinationForPlatform()
 		;;
 
 	tvOS)
-		SIMULATOR_ID=`xcrun simctl list | grep -v unavailable | grep "Apple TV" | grep -v "(at " | tail -1 | sed "s/) (.*)\$//" | sed "s/^.*(//"`
+		SIMULATOR_ID=`xcrun simctl list | grep -v unavailable | grep "Apple TV" | grep "(at " | tail -1 | sed "s/^.*at 1080p) (//" | sed "s/).*$//"`
 		echo "id=$SIMULATOR_ID"
 		;;
 
 	watchOS)
-		SIMULATOR_ID=`xcrun simctl list | grep -v unavailable | grep -v "Watch:" | grep "Apple Watch Series" | tail -1 | sed "s/) (.*)\$//" | sed "s/^.*(//"`
+		SIMULATOR_ID=`xcrun simctl list | grep -v unavailable | grep -v "Watch:" | grep "Apple Watch Series" | tail -1 | sed "s/^.*mm (//" | sed "s/).*$//"`
 		echo "id=$SIMULATOR_ID"
 		;;
 
